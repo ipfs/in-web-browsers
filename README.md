@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ipfs/in-web-browsers.png?label=ready&title=Ready)](https://waffle.io/ipfs/in-web-browsers)
 # IPFS In Web Browsers
 > Tracking the Path to getting IPFS and other Decentralized Protocols Natively Supported in Web Browsers.
 

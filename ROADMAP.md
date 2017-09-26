@@ -9,8 +9,8 @@ _**THIS IS A WORK IN PROGRESS** We are actively working on this Roadmap. It is s
 
 ## The Path to Native Browser Support
 
-* **Step 1.** *DONE* Implement js-ipfs  
-* **Step 2.** *DONE* Make js-ipfs and go-ipfs interoperate seamlessly (see https://github.com/ipfs/pm/issues/310, https://github.com/ipfs/pm/issues/343, https://github.com/ipfs/pm/issues/358)
+* **Step 1.** *DONE* Implement [js-ipfs](https://github.com/ipfs/js-ipfs)  
+* **Step 2.** *DONE* Make [js-ipfs](https://github.com/ipfs/js-ipfs) and [go-ipfs](https://github.com/ipfs/go-ipfs) interoperate seamlessly (see https://github.com/ipfs/pm/issues/310, https://github.com/ipfs/pm/issues/343, https://github.com/ipfs/pm/issues/358)
 * **Step 3.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Define the APIs, address schemes, security models, etc.
 * **Step 4.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Create browsers add-ons and/or extensions that handle dweb protocols see [Epic: Web Extension supports gateways and core api with both js and go nodes](https://github.com/ipfs/in-web-browsers/issues/39) and the list of [web extension issues](https://github.com/ipfs/in-web-browsers/labels/web%20extension))
 * **Step 5.** *NEXT STEP* Make the case for IPFS & Decentralized Web Protocols in Web Browsers with Use Cases, Sample Applications, Demos and Delightful Documentation

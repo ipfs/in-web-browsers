@@ -2,15 +2,17 @@
 
 > Tracking the Path to getting IPFS and other Decentralized Protocols Natively Supported in Web Browsers.
 
-## Objectives
-
-See the [ROADMAP](#ROADMAP) for a breakdown of the steps we will be taking to get these protocols supported natively by web browsers.
-
 ## Current Status
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ipfs/in-web-browsers.svg?columns=all)](https://waffle.io/ipfs/in-web-browsers)
 
-Currently in order to run IPFS in a web browser, you have to either bundle js-ipfs with your client-side application or your users have to run a go-ipfs daemon on their local machines. This means we've completed the first step on [The Path to Native Browser Support](ROADMAP.md#the-path-to-native-browser-support).
+Currently in order to run IPFS in a web browser, you have to either bundle js-ipfs with your client-side application or your users have to run a go-ipfs daemon on their local machines. This means we've completed the first step on [The Path to Native Browser Support](#Roadmap).
+
+You can now install the IPFS Companion, a Web Extension that works in Chrome, Firefox and Brave to give your browser super powers, I mean, to add support for the IPFS protocol.
+
+**Watch @lidel give a quick update on the IPFS Companion at the IPFS All Hands Dec 12:**
+
+[![](https://ipfs.io/ipfs/QmPan1yLc3AM5MzhJzL7wByrrmsGx8gz276Xn28VLrcSyQ)](https://www.youtube.com/watch?time_continue=1094&v=xCMNgBzn5WI).
 
 ## PM'ing
 
@@ -26,7 +28,7 @@ Currently in order to run IPFS in a web browser, you have to either bundle js-ip
 **The Path to Native Browser Support**
 - **Step 1.** *DONE* Implement [js-ipfs](https://github.com/ipfs/js-ipfs)
 - **Step 2.** *DONE* Make [js-ipfs](https://github.com/ipfs/js-ipfs) and [go-ipfs](https://github.com/ipfs/go-ipfs) interoperate seamlessly (see https://github.com/ipfs/pm/issues/310, https://github.com/ipfs/pm/issues/343, https://github.com/ipfs/pm/issues/358)
--  **Step 3.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Define the APIs, address schemes, security models, etc.
+- **Step 3.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Define the APIs, address schemes, security models, etc.
 - **Step 4.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Create browsers add-ons and/or extensions that handle dweb protocols see [Epic: Web Extension supports gateways and core api with both js and go nodes](https://github.com/ipfs/in-web-browsers/issues/39) and the list of [web extension issues](https://github.com/ipfs/in-web-browsers/labels/web%20extension))
 - **Step 5.** *NEXT STEP* Make the case for IPFS & Decentralized Web Protocols in Web Browsers with Use Cases, Sample Applications, Demos and Delightful Documentation
 - **Step 6.** Native support in the Browsers: Protocol Handlers incorporated into the browsers by default

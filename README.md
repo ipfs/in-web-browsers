@@ -8,7 +8,6 @@ See the [ROADMAP](#ROADMAP) for a breakdown of the steps we will be taking to ge
 
 ## Current Status
 
-<<<<<<< HEAD
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ipfs/in-web-browsers.svg?columns=all)](https://waffle.io/ipfs/in-web-browsers)
 
 Currently in order to run IPFS in a web browser, you have to either bundle js-ipfs with your client-side application or your users have to run a go-ipfs daemon on their local machines. This means we've completed the first step on [The Path to Native Browser Support](ROADMAP.md#the-path-to-native-browser-support).

@@ -41,12 +41,13 @@ Some desirable characteristics for WGs
 
 ### Context (checking in, getting synced)
 
-→ **lidel's proposed OKRs: https://github.com/ipfs/in-web-browsers/pull/62 **
+- lidel's proposed OKRs: https://github.com/ipfs/in-web-browsers/pull/62
+  - these are only for browser extension
+  - a starting point for further discussion
 
 Lots of ideas and conversations already floating around
 - kyle's thoughts about UX
 - address scheme discussions ... [The four stages of the upgrade path for path addressing](https://github.com/ipfs/specs/pull/152#issuecomment-284628862) ... 
-- 
 
 Use Cases
 - persistence layer for a dapp developers (Open Bazaar use case)
@@ -68,8 +69,9 @@ Proposal: revisit kyle's "screed" proposal, update that and use it as the defini
 
 - Understand what is the ideal UX and agree on it (multiple iterations)
 - create a browser demo that shows the browser manufacturers how it _should_ work (some misgivings about whether this is the right way to spend effort)
-	- alternative: [Create WebExtensions Experiments to Prototype Missing APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/343) using [WebExtension Experiment](https://webextensions-experiments.readthedocs.io/en/latest/)  + demo use in IPFS Companion       
-	- alternative: fork firefox as a demo -- this is how they propose features within the firefox team 
+	- cost-effective alternative: [Create WebExtensions Experiments to Prototype Missing APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/343)    
+      ([WebExtension Experiment](https://webextensions-experiments.readthedocs.io/en/latest/)  + demo use in IPFS Companion)
+	- expensive alternative: fork firefox as a demo -- this is how Tor Browser works, and how they propose features within the firefox team 
 - create a "Call to Arms" that tells and shows why this is important and how it should work
 - Establish a style guide for IPFS apps in the browser
 - spring cleaning -- clean up the in-web-browsers repo. update issues, update docs, etc.

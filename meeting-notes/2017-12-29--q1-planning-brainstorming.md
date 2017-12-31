@@ -82,9 +82,8 @@ Straw Poll of Group's Priorities
 	- are we distributed yet?
 
 # Action Items 
-- submit PRs to the PR
+- submit PRs with OKR proposals ([OKR.md](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md))
   - everyone declare what they want to work on (pitch your own goal)
-	- TODO: make a starting-point document that everyone can PR against
 - create a channel in irc 
 - meet again in 10 days (around 8-10 January)
 - spring-cleaning https://github.com/ipfs/in-web-browsers/issues

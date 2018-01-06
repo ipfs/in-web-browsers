@@ -1,4 +1,5 @@
 # IPFS In Web Browsers Working Group
+[![#ipfs-in-web-browsers](https://img.shields.io/badge/irc-%23ipfs--in--web--browsers-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs-in-web-browsers)
 
 > Tracking the Path to getting IPFS and other Decentralized Protocols Natively Supported in Web Browsers.
 
@@ -8,7 +9,7 @@
 
 Currently in order to run IPFS in a web browser, you have to either bundle js-ipfs with your client-side application or your users have to run a go-ipfs daemon on their local machines. This means we've completed the first step on [The Path to Native Browser Support](#Roadmap).
 
-You can now install the IPFS Companion, a Web Extension that works in Chrome, Firefox and Brave to give your browser super powers, I mean, to add support for the IPFS protocol.
+You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion), a Web Extension that works in Chrome, Firefox and Brave to give your browser super powers, I mean, to add support for the IPFS protocol.
 
 **Watch @lidel give a quick update on the IPFS Companion at the IPFS All Hands Dec 12:**
 
@@ -16,7 +17,8 @@ You can now install the IPFS Companion, a Web Extension that works in Chrome, Fi
 
 ## PM'ing
 
-- [Sprint 13-24 February](https://github.com/ipfs/pm/issues/351) is aimed at tackling a number of the next steps.
+- [Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
+- [OKRs](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
 
 ## Roadmap
 

@@ -12,8 +12,9 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 - Single codebase is running on all browsers (no forks, browser-specific modules are used instead)
 - Robust CI/QA practices are established, improve test coverage ([ipfs-companion/#145](https://github.com/ipfs/ipfs-companion/issues/145))
 - Up-to-date developer documentation exists
-- IPFS is embeded into every browser page through window.ipfs
-- Get one IPFS Web Application to learn how to use the IPFS Companion IPFS node if it is available (i.e PeerPad). Document the process..
+- Detect [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and provide additional controls ([ipfs-companion/#350](https://github.com/ipfs-shipyard/ipfs-companion/issues/350))
+- IPFS is embeded into every browser page through `window.ipfs` ([ipfs-companion/#330](https://github.com/ipfs-shipyard/ipfs-companion/issues/330))
+  - Get one IPFS Web Application to learn how to use the IPFS Companion IPFS node if it is available (i.e PeerPad). Document the process..
 
 **Improved initial experience for non-technical users of mainstream browsers:**
 
@@ -33,4 +34,5 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 **Structure documentation and discussion around the primary Browser vendor concerns:**
 
 - `dweb:` proposal is documented
+- `ipfs://` (short term URL-based solution) is documented
 - `Ways to deal/support the Content Origin Policy for IPFS links` are documented

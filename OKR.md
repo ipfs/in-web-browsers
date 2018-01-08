@@ -33,6 +33,8 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 
 **Structure documentation and discussion around the primary Browser vendor concerns:**
 
-- `dweb:` proposal is documented
-- `ipfs://` (short term URL-based solution) is documented
-- `Ways to deal/support the Content Origin Policy for IPFS links` are documented
+- Create specs for addressing on the Decentralized Web
+    - `dweb:` proposal is documented
+    - `ipfs://` (URL-based solution) is documented
+    - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
+    - published at https://github.com/ipfs/specs/tree/master/dweb-addressing

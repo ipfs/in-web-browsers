@@ -34,3 +34,12 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 
 - `dweb:` proposal is documented
 - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
+
+**A communal call to action! Design, build and publish arewedistributedyet.com (TBC)**
+
+Support the conversation with browser vendors by documenting what's needed and why.
+
+- Collate initial list of roadblocks and apis needed.
+- Publish a progress report, as the list of apis, ideally with a test for it’s existence, a short summary on what it would allow, and a list of p2p projects that want it.
+- Built as a static website published to ipfs, backed by a repo with a clear mechanism to add additional tests / features / roadblocks.
+- Agree name and register domain.

@@ -12,6 +12,7 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 - Single codebase is running on all browsers (no forks, browser-specific modules are used instead)
 - Robust CI/QA practices are established, improve test coverage ([ipfs-companion/#145](https://github.com/ipfs/ipfs-companion/issues/145))
 - A welcoming, up-to-date developer documentation exists
+- Detect [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and provide additional controls ([ipfs-companion/#350](https://github.com/ipfs-shipyard/ipfs-companion/issues/350))
 - IPFS is embeded into every browser page through `window.ipfs` ([ipfs-compaion/#330](https://github.com/ipfs-shipyard/ipfs-companion/issues/330))
   - Opt-in or access controls exist to prevent web pages from performing actions without prior user approval
   - `window.ipfs` is a proxy over `window.postMessage` to communicate with a running IPFS node exposed by the extension ([ipfs-postmsg-proxy](https://github.com/tableflip/ipfs-postmsg-proxy))

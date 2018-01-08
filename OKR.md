@@ -39,7 +39,9 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 **Structure documentation and discussion around the primary Browser vendor concerns:**
 
 - Create specs for addressing on the Decentralized Web
-    - `dweb:` proposal is documented
-    - `ipfs://` (URL-based solution) is documented
-    - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
-    - published at https://github.com/ipfs/specs/tree/master/dweb-addressing
+  - `dweb:` proposal is documented
+  - `ipfs://` (URL-based solution) is documented
+  - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
+  - published at https://github.com/ipfs/specs/tree/master/dweb-addressing
+- Set up `arewedistributedyet.com` (domain TBC) as a communal call to action. ([in-web-browsers/#24](https://github.com/ipfs/in-web-browsers/issues/24))
+  - Publish the list of apis needed, with a tests where possible, a short summary on what it would allow, and a list of p2p projects that want it.    

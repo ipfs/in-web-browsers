@@ -34,3 +34,10 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 
 - `dweb:` proposal is documented
 - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
+
+**Publish IPFS UI Style Guide**
+
+- Create a ui-style-guide repo as a guide to the design language of ipfs apps.
+- Support UI experimentation, but retain a coherent feel across apps by providing a reusable color palette, type-scale, font-familiy, and spacing, as drop-in, atomic, css rules.
+- Provide brief explanations of how, why and where to use them.
+- Document how to add new elemements. This project should expand to include reusable components and ui patterns as we create them.

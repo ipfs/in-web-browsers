@@ -16,10 +16,6 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
     * The feature is a setting that can be toggled on and off
     * `window.ipfs` is a proxy over `window.postMessage` to communicate with a running IPFS node exposed by the extension ([ipfs-postmsg-proxy](https://github.com/tableflip/ipfs-postmsg-proxy))
     * Access controls prevent web pages from performing actions without prior user approval
-        * Access control is fine grained, it requires permission to be granted to each IPFS function prior to usage, with option to allow access to all
-        * Granted permissions are scoped to the origin (site) on which they are granted and persist until the browser process exits. When granting permission, the user is given the option for the grant to be "remembered" for a given origin so that it persists across browser restarts
-        * Settings allow the user to revoke "remembered" privileges given to origins
-    * Streaming APIs operate correctly (do not buffer content into memory) ([ipfs-postmsg-proxy/#2](https://github.com/tableflip/ipfs-postmsg-proxy/issues/2))
 - Get one IPFS Web Application to learn how to use the IPFS Companion IPFS node if it is available (i.e PeerPad). Document the process..
 
 **Improved initial experience for non-technical users of mainstream browsers:**

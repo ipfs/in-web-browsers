@@ -22,6 +22,11 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
   - Simplified and improved UX  ([ipfs-companion/#324](https://github.com/ipfs-shipyard/ipfs-companion/issues/342) etc)
   - Display a Landing Page (user-focused primer on distributed web) after initial install ([ipfs-companion/#324](https://github.com/ipfs/ipfs-companion/issues/324))
   - UX without local go-ipfs node is improved under Firefox (eg. embedded js-ipfs is used for uploads, public gateway for downloads)
+- Publish IPFS UI Style Guide
+  - Create a ui-style-guide repo as a guide to the design language of ipfs apps.
+  - Support UI experimentation, but retain a coherent feel across apps by providing a reusable color palette, type-scale, font-familiy, and spacing, as drop-in, atomic, css rules.
+  - Provide brief explanations of how, why and where to use them.
+  - Document how to add new elemements. This project should expand to include reusable components and ui patterns as we create them.
 
 **[Brave](https://brave.com) is the first browser with "native" IPFS support:**
 
@@ -34,10 +39,3 @@ Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Br
 
 - `dweb:` proposal is documented
 - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
-
-**Publish IPFS UI Style Guide**
-
-- Create a ui-style-guide repo as a guide to the design language of ipfs apps.
-- Support UI experimentation, but retain a coherent feel across apps by providing a reusable color palette, type-scale, font-familiy, and spacing, as drop-in, atomic, css rules.
-- Provide brief explanations of how, why and where to use them.
-- Document how to add new elemements. This project should expand to include reusable components and ui patterns as we create them.

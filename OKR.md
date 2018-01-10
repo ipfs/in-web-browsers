@@ -19,7 +19,7 @@ _Focus on people. What are the user journeys; what are their goals. How will IPF
 
 _Demonstrate what is possible with IPFS in the browser already, and improve the onboarding process._
 
-### Key Results
+### Key results
 **[IPFS Companion](https://github.com/ipfs/ipfs-companion) is the reference implementation of IPFS in the browser**
   - Simplified and improved UX  ([ipfs-companion/#324](https://github.com/ipfs-shipyard/ipfs-companion/issues/324) [ipfs-companion/#342](https://github.com/ipfs/ipfs-companion/issues/342))
   - Welcoming, up-to-date developer documentation exists
@@ -51,7 +51,7 @@ _Demonstrate what is possible with IPFS in the browser already, and improve the 
 
 _Support the conversation with browser vendors. We need to make it as easy as possible for them to see where we are at, what's needed and why._
 
-### Key Results
+### Key results
 
 **Set up `arewedistributedyet.com` as a communal call to action.** ([in-web-browsers/#24](https://github.com/ipfs/in-web-browsers/issues/24))
 - Publish the list of apis needed, with a tests where possible, a short summary on what it would allow, and a list of p2p projects that want it.    

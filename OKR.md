@@ -1,9 +1,8 @@
-# IPFS in web browsers
-## Objectives and Key Results - Q1 2018
+# IPFS in web browsers: Objectives and Key Results - Q1 2018
+
 
 **WORK IN PROGRESS. This document will change.**
 
----
 
 ## Understand how IPFS _should work_ in web browsers
 

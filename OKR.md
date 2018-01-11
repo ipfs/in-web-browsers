@@ -39,9 +39,9 @@ _Improve the onboarding experience. Make it easy to use IPFS in the browser toda
   - `ipfs-dashboard` is built as a reusable replacement for `ipfs-web-ui`
   - Update `ipfs-dashboard` to use `window.ipfs` if available
   - Create a ui-style-guide repo as a guide to the design language of IPFS apps, and share look and feel with `ipfs-companion`, `ipfs-desktop` and `ipfs-dashboard`
-  - A logo for dashboard, desktop and companion to give each an identity that shows they separate parts that work together?
+  - A logo for dashboard, desktop and companion to give each an identity that shows they separate parts that work together ([pm-ipfs-gui#24](https://github.com/ipfs-shipyard/pm-ipfs-gui/issues/24))
 - **[IPFS Companion](https://github.com/ipfs/ipfs-companion) is the reference implementation of IPFS in the browser**
-  - Simplified and improved UX  ([ipfs-companion/#324](https://github.com/ipfs-shipyard/ipfs-companion/issues/324) [ipfs-companion/#342](https://github.com/ipfs/ipfs-companion/issues/342))
+  - Simplified and improved UX  ([ipfs-companion/#324](https://github.com/ipfs-shipyard/ipfs-companion/issues/324), [ipfs-companion/#342](https://github.com/ipfs/ipfs-companion/issues/342))
   - Welcoming, up-to-date developer documentation exists
   - Retain positive presence in browser extension stores
   - Robust CI/QA practices are established, improve test coverage ([ipfs-companion/#145](https://github.com/ipfs/ipfs-companion/issues/145))

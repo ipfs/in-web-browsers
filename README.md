@@ -17,20 +17,17 @@ You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-c
 
 ## PM'ing
 
-- [Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
-- [OKRs](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
+- [Working Group Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
+- [2018 OKRs](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
 
-## Roadmap
+## Endeavours
 
-> **THIS IS A WORK IN PROGRESS** We are actively working on this Roadmap. It is subject to major changes during the current 2-week sprint. See [ipfs/in-web-browsers#23](https://github.com/ipfs/in-web-browsers/issues/23) to track the work or comment on it.
+- [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A Desktop application to run IPFS with a GUI
+- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A Web Extension to give your browser super powers.
+- [IPFS WebUI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard
+- [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifiying and leveling up IPFS interfaces and the user journey into the Distributed Web
+  - [IPFS Styleguide and UI language](https://github.com/ipfs-shipyard/ipfs-ui-style-guide)
+- `dweb:` specification & roadmap - The upgrade and integration path for Browsers to support the Distributed Web.
 
-- What we want: Protocol handlers for decentralized web protocols, especially IPFS and IPLD, bundled natively in web browsers.
-- What we need to provide to browser manufacturers: something that demonstrates why these protocols are valuable to their users. We have to show why distributed, decentralized protocols and technologies are valuable and we need to show specifically why IPFS is valuable.
 
-**The Path to Native Browser Support**
-- **Step 1.** *DONE* Implement [js-ipfs](https://github.com/ipfs/js-ipfs)
-- **Step 2.** *DONE* Make [js-ipfs](https://github.com/ipfs/js-ipfs) and [go-ipfs](https://github.com/ipfs/go-ipfs) interoperate seamlessly (see https://github.com/ipfs/pm/issues/310, https://github.com/ipfs/pm/issues/343, https://github.com/ipfs/pm/issues/358)
-- **Step 3.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Define the APIs, address schemes, security models, etc.
-- **Step 4.** *[IN PROGRESS](https://github.com/ipfs/in-web-browsers/milestone/1)* Create browsers add-ons and/or extensions that handle dweb protocols see [Epic: Web Extension supports gateways and core api with both js and go nodes](https://github.com/ipfs/in-web-browsers/issues/39) and the list of [web extension issues](https://github.com/ipfs/in-web-browsers/labels/web%20extension))
-- **Step 5.** *NEXT STEP* Make the case for IPFS & Decentralized Web Protocols in Web Browsers with Use Cases, Sample Applications, Demos and Delightful Documentation
-- **Step 6.** Native support in the Browsers: Protocol Handlers incorporated into the browsers by default
+

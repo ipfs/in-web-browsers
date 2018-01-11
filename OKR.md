@@ -2,7 +2,6 @@
 
 **WORK IN PROGRESS. This document will change.**
 
----
 
 ## We have a shared understanding of how IPFS _should work_ in web browsers
 
@@ -35,7 +34,7 @@ _Improve the onboarding experience. Make it easy to use IPFS in the browser toda
 ### Key results
 
 - **IPFS Desktop replaces go-ipfs as the recommended starting point for new users**
-  - TBC (what are the plans for ipfs-desktop ?)
+  - **TBC!** _what are the plans for ipfs-desktop?_
   - Update _"getting started"_ section of https://ipfs.io
   - `ipfs-dashboard` is built as a reusable replacement for `ipfs-web-ui`
   - Update `ipfs-dashboard` to use `window.ipfs` if available

@@ -1,49 +1,55 @@
-# Objectives and Key Results
+# IPFS in web browsers: Objectives and Key Results - Q1 2018
 
-Quarterly statement of OKRs (Objectives and Key Results) for the "IPFS in Web Browsers" effort.
+**WORK IN PROGRESS. This document will change.**
 
-## Q1 2018 (WORK IN  PROGRESS)
 
-- **Note:** This is work-in-progress document, not yet finalized. Please create PR against it with your own goals/proposals.
-- **TODO:** Add your goals/proposals to the section below, as PRs :-)
+## We have a shared understanding of how IPFS _should work_ in web browsers
 
-**[IPFS Companion](https://github.com/ipfs/ipfs-companion) is a solid foundation for browser integration(s) going forward:**
+_Focus on people. What are the user journeys; what are their goals. How will IPFS improve a web users day?_
 
-- Single codebase is running on all browsers (no forks, browser-specific modules are used instead)
-- Robust CI/QA practices are established, improve test coverage ([ipfs-companion/#145](https://github.com/ipfs/ipfs-companion/issues/145))
-- A welcoming, up-to-date developer documentation exists
-- Detect [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and provide additional controls ([ipfs-companion/#350](https://github.com/ipfs-shipyard/ipfs-companion/issues/350))
-- IPFS is embeded into every browser page through `window.ipfs` ([ipfs-compaion/#330](https://github.com/ipfs-shipyard/ipfs-companion/issues/330))
-  - Opt-in or access controls exist to prevent web pages from performing actions without prior user approval
-  - `window.ipfs` is a proxy over `window.postMessage` to communicate with a running IPFS node exposed by the extension ([ipfs-postmsg-proxy](https://github.com/tableflip/ipfs-postmsg-proxy))
-  - Get one IPFS Web Application to learn how to use the IPFS Companion IPFS node if it is available (i.e PeerPad). Document the process..
+### Key results
 
-**Improved initial experience for non-technical users of mainstream browsers:**
+- Create **the** reference document for what users goals are when using IPFS as part of their daily web browsing.
+- Document user journeys that capture an ideal UX for achieving those goals.
+- Document how dat and beaker are being used for this today.
+- Start a regular distributed web meetup in London.
 
-- Continuous presence in browser extension stores (pass/address reviews on time)
-- Catering to less-technical users of Firefox or Chrome
-  - Simplified and improved UX  ([ipfs-companion/#324](https://github.com/ipfs-shipyard/ipfs-companion/issues/342) etc)
-  - Display a Landing Page (user-focused primer on distributed web) after initial install ([ipfs-companion/#324](https://github.com/ipfs/ipfs-companion/issues/324))
-  - UX without local go-ipfs node is improved under Firefox (eg. embedded js-ipfs is used for uploads, public gateway for downloads)
-- Publish IPFS UI Style Guide
-  - Create a ui-style-guide repo as a guide to the design language of ipfs apps.
-  - Support UI experimentation, but retain a coherent feel across apps by providing a reusable color palette, type-scale, font-familiy, and spacing, as drop-in, atomic, css rules.
-  - Provide brief explanations of how, why and where to use them.
-  - Document how to add new elemements. This project should expand to include reusable components and ui patterns as we create them.
 
-**[Brave](https://brave.com) is the first browser with "native" IPFS support:**
+## Browser developers understand the requirements of the decentralized web.
 
-- IPFS connectivity working out-of-the-box in Brave
-  - Embedded js-ipfs runs in Brave without installing external daemon
-  - User experience is the same as in Firefox when running external node
-- Support for native protocols in Location Bar and DOM elements (`href`, `src`)
+_Support the conversation with browser vendors. Make it as easy as possible for them to see where we are at, what's needed and why._
 
-**Structure documentation and discussion around the primary Browser vendor concerns:**
+### Key results
 
-- Create specs for addressing on the Decentralized Web
-  - `dweb:` proposal is documented
-  - `ipfs://` (URL-based solution) is documented
-  - `Ways to deal/support the Content Origin Policy for IPFS links` are documented
-  - published at https://github.com/ipfs/specs/tree/master/dweb-addressing
-- Set up `arewedistributedyet.com` (domain TBC) as a communal call to action. ([in-web-browsers/#24](https://github.com/ipfs/in-web-browsers/issues/24))
-  - Publish the list of apis needed, with a tests where possible, a short summary on what it would allow, and a list of p2p projects that want it.    
+- **Publish `arewedistributedyet.com` as a communal call to action.**
+  - Collate the initial list of apis needed [in-web-browsers/#35](https://github.com/ipfs/in-web-browsers/issues/35)
+  - Publish the list, with a tests where possible, a short summary on what it would allow, and a list of p2p projects that want it. ([in-web-browsers/#24](https://github.com/ipfs/in-web-browsers/issues/24))
+- **Create a final draft spec for [addressing on the Decentralized Web](https://github.com/ipfs/specs/tree/master/dweb-addressing)**
+
+
+## Lower the barrier to entry for casual users
+
+_Improve the onboarding experience. Make it easy to use IPFS in the browser today._
+
+### Key results
+
+- Improve UX for Desktop & Companion ([ipfs-companion/#324](https://github.com/ipfs-shipyard/ipfs-companion/issues/324), [ipfs-companion/#342](https://github.com/ipfs/ipfs-companion/issues/342))
+- Publish a ui-style-guide repo to define the design language of IPFS apps
+- Implement the style guide UI recommendations in Companion & Desktop
+- Improve test coverage for Desktop & Companion
+- Implement CI process for Companion ([ipfs-companion/#145](https://github.com/ipfs/ipfs-companion/issues/145))
+- Jenkins jobs build Desktop installers and Companion bundles for all supported platforms
+- Publish signed releases of Desktop
+- Update the _"Getting started"_ section of https://ipfs.io to recommend Desktop
+- Publish welcoming, up-to-date documentation for Companion & Desktop
+- Companion uses a `js-ipfs` node used when a system IPFS daemon is not available.
+- Companion exposes IPFS Core API as `window.ipfs`  ([in-web-browsers/#42](https://github.com/ipfs/in-web-browsers/issues/42), [ipfs-compaion/#330](https://github.com/ipfs-shipyard/ipfs-companion/issues/330))
+- Update PeerPad to use the `window.ipfs` if available.
+- Provide a step-by-step guide for developers to create apps that use `window.ipfs`, using PeerPad as the example.
+- [Brave](https://brave.com) supports IPFS out-of-the-box
+- [Brave](https://brave.com) supports `ipfs://` and `dweb:/ipfs` address schemes in Location Bar and DOM elements (`href`, `src`)
+- `ipfs-dashboard` is built as a reusable replacement for `ipfs-web-ui`
+- Update `ipfs-dashboard` to use `window.ipfs` if available.
+- Companion can start and stop the Desktop IPFS node ([in-web-browsers/#12](https://github.com/ipfs/in-web-browsers/issues/12))
+- Maintain a 5 star rating for Companion in the Chrome Web Store and the Firefox Add on store
+- Create logos for Desktop and Companion to give each an identity that shows they separate parts that work together ([pm-ipfs-gui#24](https://github.com/ipfs-shipyard/pm-ipfs-gui/issues/24))

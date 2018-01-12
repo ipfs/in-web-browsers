@@ -38,7 +38,7 @@ _Improve the onboarding experience. Make it easy to use IPFS in the browser toda
 - Implement the style guide UI recommendations in Companion & Desktop
 - Improve test coverage for Desktop & Companion
 - Implement CI process for Companion ([ipfs-companion/#145](https://github.com/ipfs/ipfs-companion/issues/145))
-- Jenkins job builds Dekstop installers for all supported platforms from a specific git tag
+- Jenkins jobs build Desktop installers and Companion bundles for all supported platforms
 - Publish signed releases of Desktop
 - Update the _"Getting started"_ section of https://ipfs.io to recommend Desktop
 - Publish welcoming, up-to-date documentation for Companion & Desktop

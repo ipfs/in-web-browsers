@@ -1,4 +1,4 @@
-# IPFS in Web Browsers Q1 Planning/Brainstorming 
+# IPFS in Web Browsers Q1 Planning/Brainstorming (I)
 
 ## Attendees
 

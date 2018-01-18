@@ -30,7 +30,7 @@
   - Tracked in [existing epic @ ipfs/in-web-browsers](https://github.com/ipfs/in-web-browsers/issues/24#issuecomment-355942618)
   - Registered Domain Name: AREWEDISTRIBUTEDYET.COM
 
-## Appendinx
+## Appendix
 
 ### Q:
 - where is the line between functionality that’s only available in node vs func that’s available in browsers?

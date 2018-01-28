@@ -18,7 +18,7 @@ You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-c
 ## PM'ing
 
 - [Working Group Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
-- [2018 OKRs](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
+- [OKRs (Objectives and Key Results) for Q1 2018](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
 
 ## Endeavours
 
@@ -28,6 +28,4 @@ You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-c
 - [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifiying and leveling up IPFS interfaces and the user journey into the Distributed Web
   - [IPFS Styleguide and UI language](https://github.com/ipfs-shipyard/ipfs-ui-style-guide)
 - `dweb:` specification & roadmap - The upgrade and integration path for Browsers to support the Distributed Web.
-
-
 

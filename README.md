@@ -17,15 +17,15 @@ You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-c
 
 ## PM'ing
 
+- [ROADMAP](ROADMAP.md) (Quarterly Objectives and Key Results)
 - [Working Group Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
-- [OKRs (Objectives and Key Results) for Q1 2018](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
 
 ## Endeavours
 
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A Desktop application to run IPFS with a GUI
 - [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A Web Extension to give your browser super powers.
 - [IPFS WebUI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard
-- [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifiying and leveling up IPFS interfaces and the user journey into the Distributed Web
+- [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifying and leveling up IPFS interfaces and the user journey into the Distributed Web
   - [IPFS Styleguide and UI language](https://github.com/ipfs-shipyard/ipfs-ui-style-guide)
 - `dweb:` specification & roadmap - The upgrade and integration path for Browsers to support the Distributed Web.
 

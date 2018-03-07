@@ -9,7 +9,6 @@
     * [Prerequisites](#prerequisites)
     * [Long Game](#long-game)
 * [Quarterly Objectives and Key Results](#quarterly-objectives-and-key-results)
-    * [Q2 2018](#q2-2018)
     * [Q1 2018](#q1-2018)
         * [We have a shared understanding of how IPFS <em>should work</em> in web browsers](#we-have-a-shared-understanding-of-how-ipfs-should-work-in-web-browsers)
         * [Browser developers understand the requirements of the decentralized web](#browser-developers-understand-the-requirements-of-the-decentralized-web)
@@ -38,10 +37,6 @@
 
 We try to frame our ongoing work using a process based on quarterly Objectives and Key Results (OKRs).
 Objectives reflect outcomes that are challenging, but realistic. Results are tangible and measurable.
-
-## Q2 2018
-
-To be determined.
 
 ## Q1 2018
 

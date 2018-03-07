@@ -5,29 +5,29 @@
 
 ## Current Status
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/ipfs/in-web-browsers.svg?columns=all)](https://waffle.io/ipfs/in-web-browsers)
 
-Currently in order to run IPFS in a web browser, you have to either bundle js-ipfs with your client-side application or your users have to run a go-ipfs daemon on their local machines. This means we've completed the first step on [The Path to Native Browser Support](#Roadmap).
+### JS Libraries
+Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (full IPFS node in JS) with your client-side application
+or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client library) to connect to external daemon running on local or remote machine.
 
-You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion), a Web Extension that works in Chrome, Firefox and Brave to give your browser super powers, I mean, to add support for the IPFS protocol.
+### Browser Extension
+You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion), a WebExtension that works in Chrome, Firefox and Brave to give your browser super powers,
+I mean, to add support for the IPFS protocol and related [features](https://github.com/ipfs-shipyard/ipfs-companion#features).
 
-**Watch @lidel give a quick update on the IPFS Companion at the IPFS All Hands Dec 12:**
-
-[![](https://ipfs.io/ipfs/QmPan1yLc3AM5MzhJzL7wByrrmsGx8gz276Xn28VLrcSyQ)](https://www.youtube.com/watch?time_continue=1094&v=xCMNgBzn5WI).
+Latest Beta experimentally exposes IPFS API under [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs) on every web page.
 
 ## PM'ing
 
+ - [![Waffle.io - Columns and their card count](https://badge.waffle.io/ipfs/in-web-browsers.svg?columns=all)](https://waffle.io/ipfs/in-web-browsers)
+- [ROADMAP](ROADMAP.md) (with Quarterly Objectives and Key Results)
 - [Working Group Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
-- [2018 OKRs](https://github.com/ipfs/in-web-browsers/blob/master/OKR.md)
 
 ## Endeavours
 
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A Desktop application to run IPFS with a GUI
 - [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A Web Extension to give your browser super powers.
 - [IPFS WebUI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard
-- [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifiying and leveling up IPFS interfaces and the user journey into the Distributed Web
+- [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifying and leveling up IPFS interfaces and the user journey into the Distributed Web
   - [IPFS Styleguide and UI language](https://github.com/ipfs-shipyard/ipfs-ui-style-guide)
 - `dweb:` specification & roadmap - The upgrade and integration path for Browsers to support the Distributed Web.
-
-
 

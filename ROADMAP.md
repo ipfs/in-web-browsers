@@ -1,10 +1,10 @@
-# ROADMAP for IPFS in Web Browsers
+# Roadmap for IPFS in Web Browsers
 
 > This page provides the community with a high level overview of our current priorities and ongoing endevours.
 
 ### Table of Contents
 
-* [ROADMAP](#roadmap)
+* [Roadmap](#roadmap)
     * [Goals](#goals)
     * [Prerequisites](#prerequisites)
     * [Long Game](#long-game)
@@ -16,7 +16,7 @@
         * [Move towards IPFS working seamlessly in browsers](#move-towards-ipfs-working-seamlessly-in-browsers)
         * [Provide a nice desktop experience for casual users of IPFS](#provide-a-nice-desktop-experience-for-casual-users-of-ipfs)
 
-# ROADMAP
+# Roadmap
 
 ### Goals
 - **Native support in the Browsers:** protocol handlers for decentralized web protocols, especially IPFS and IPLD, bundled natively in web browsers.

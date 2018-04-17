@@ -79,7 +79,7 @@ _Extracted from the meetings irc logs in #in-web-browsers_
 - Oli to arrange a call to get more input on technical discussion
 
 
-### WebUI redsign
+### WebUI redesign
 
 - We had first iteration on WebUI Wireframes for start/status page. https://github.com/ipfs-shipyard/pm-ipfs-gui/issues/33#issuecomment-380017873
 - Next iteration on start/status and first draft of the files page this week.

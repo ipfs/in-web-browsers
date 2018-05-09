@@ -69,4 +69,4 @@ _Extracted from the meetings irc logs in #in-web-browsers_
 ## Action Items
 - Please take a read through the [Aegir findings](https://github.com/ipfs-shipyard/pm-ipfs-gui/issues/51#issuecomment-385425256)
 - everyone to go over proposed WebUI designs and provide feedback (ASAP)
-- think about IPLD Explorer, provide thoughts at https://github.com/ipfs-shipyard/pm-ipfs-gui/issues/11 (ok to do it ater this week)
+- think about IPLD Explorer, provide thoughts at https://github.com/ipfs-shipyard/pm-ipfs-gui/issues/11 (ok to do it later this week)

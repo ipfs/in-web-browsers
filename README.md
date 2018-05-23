@@ -5,16 +5,15 @@
 
 ## Current Status
 
-
-### JS Libraries
-Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (full IPFS node in JS) with your client-side application
-or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client library) to connect to external daemon running on local or remote machine.
-
 ### Browser Extension
 You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion), a WebExtension that works in Chrome, Firefox and Brave to give your browser super powers,
 I mean, to add support for the IPFS protocol and related [features](https://github.com/ipfs-shipyard/ipfs-companion#features).
 
 Latest Beta experimentally exposes IPFS API under [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs) on every web page.
+
+### JS Libraries
+Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (full IPFS node in JS) with your client-side application
+or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client library) to connect to external daemon running on local or remote machine.
 
 ## PM'ing
 

@@ -23,13 +23,11 @@
 When site isolation does not matter gateway can expose IPFS namespaces as regular URL paths:
 
     https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
-    https://<gateway-host>.tld/ipns/<cid>/path/to/resource
+    https://<gateway-host>.tld/ipns/<keyid_or_fqdn>/path/to/resource
 
 When origin-based security perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
 
     https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
-    https://<peerid-base32>.ipns.<gateway-host>.tld/path/to/resource
-
 
 For more context see [notes on addressing with HTTP](#notes-on-addressing-with-http) below.
 

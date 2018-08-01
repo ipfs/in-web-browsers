@@ -15,6 +15,11 @@ Latest Beta experimentally exposes IPFS API under [`window.ipfs`](https://github
 Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (full IPFS node in JS) with your client-side application
 or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client library) to connect to external daemon running on local or remote machine.
 
+### IPFS Addressing in Web Browsers
+
+See  [this memo](ADDRESSING.md). It specifies current set of conventions for the IPFS community.    
+We invite everyone to submit questions and suggestions for improvements via issues/PR.
+
 ## PM'ing
 
  - [![Waffle.io - Columns and their card count](https://badge.waffle.io/ipfs/in-web-browsers.svg?columns=all)](https://waffle.io/ipfs/in-web-browsers)
@@ -28,5 +33,4 @@ or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client lib
 - [IPFS WebUI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard
 - [IPFS GUI](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifying and leveling up IPFS interfaces and the user journey into the Distributed Web
   - [IPFS Styleguide and UI language](https://github.com/ipfs-shipyard/ipfs-ui-style-guide)
-- `dweb:` specification & roadmap - The upgrade and integration path for Browsers to support the Distributed Web.
 

@@ -6,10 +6,10 @@
 ## Current Status
 
 ### Browser Extension
-You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion), a WebExtension that works in Chrome, Firefox and Brave to give your browser super powers,
+You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion): a WebExtension to give your browser super powers,
 I mean, to add support for the IPFS protocol and related [features](https://github.com/ipfs-shipyard/ipfs-companion#features).
 
-Latest Beta experimentally exposes IPFS API under [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs) on every web page.
+It experimentally exposes IPFS API under [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs).
 
 ### JS Libraries
 Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (full IPFS node in JS) with your client-side application
@@ -17,8 +17,14 @@ or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client lib
 
 ### IPFS Addressing in Web Browsers
 
-See  [this memo](ADDRESSING.md). It specifies current set of conventions for the IPFS community.    
+See  [this memo](ADDRESSING.md). It specifies current set of URL conventions for the IPFS community.    
 We invite everyone to submit questions and suggestions for improvements via issues/PR.
+
+#### DNSLink
+
+DNSLink is mapping a domain name to an IPFS address by means of DNS TXT record. 
+
+Read [DNSLink guide](https://docs.ipfs.io/guides/concepts/dnslink/) for details such as setting it up on your own website and [DNSLink in IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/dnslink.md) to see additional benefits of using our browser extension.
 
 ## PM'ing
 

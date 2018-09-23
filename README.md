@@ -1,19 +1,30 @@
 # IPFS In Web Browsers Working Group
-[![#ipfs-in-web-browsers](https://img.shields.io/badge/irc-%23ipfs--in--web--browsers-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs-in-web-browsers)
+[![#ipfs](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs) [![#ipfs-in-web-browsers](https://img.shields.io/badge/irc-%23ipfs--in--web--browsers-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs-in-web-browsers)
 
 > Tracking the Path to getting IPFS and other Decentralized Protocols Natively Supported in Web Browsers.
+
+## Goals
+
+- Browser extension exposes IPFS features in a robust and intuitive form
+- Ensure smooth experience for web developers in browser contexts
+- Browser developers are addressing requirements of the distributed web
 
 ## Current Status
 
 ### Browser Extension
-You can now install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion): a WebExtension to give your browser super powers,
-I mean, to add support for the IPFS protocol and related [features](https://github.com/ipfs-shipyard/ipfs-companion#features).
+
+Install the [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion): an extension to give your browser super powers, I mean, to add support for the IPFS protocol and related [features](https://github.com/ipfs-shipyard/ipfs-companion#features).
 
 It experimentally exposes IPFS API under [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs).
 
-### JS Libraries
+### JavaScript Libraries
 Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (full IPFS node in JS) with your client-side application
-or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client library) to connect to external daemon running on local or remote machine.
+or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (HTTP API client library) to connect to external daemon running on local or remote machine. Make sure to check `/examples` in both repos.
+
+#### ..in Service Workers
+
+- Tracking related work: [#55](https://github.com/ipfs/in-web-browsers/issues/55)
+  - Highlight: IPFS gateway fully running on a Service Worker [service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway)
 
 ### IPFS Addressing in Web Browsers
 
@@ -32,7 +43,11 @@ Read [DNSLink guide](https://docs.ipfs.io/guides/concepts/dnslink/) for details 
 - [ROADMAP](ROADMAP.md) (with Quarterly Objectives and Key Results)
 - [Working Group Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
 
-## Endeavours
+## Team
+
+
+
+## Related Endeavours
 
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) - A Desktop application to run IPFS with a GUI
 - [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A Web Extension to give your browser super powers.

@@ -14,6 +14,7 @@
 - [Appendices](#appendices)
   - Notes on addressing with [http://](#notes-on-addressing-with-http)
   - Notes on addressing with [ipfs://](#notes-on-addressing-with-ipfs)
+  - Notes on addressing with [dweb:](#notes-on-addressing-with-dweb)  
 
 ## TL;DR
 
@@ -29,14 +30,25 @@ When origin-based security perimeter is needed, [CIDv1](https://github.com/ipld/
 
     https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
 
-For more context see [notes on addressing with HTTP](#notes-on-addressing-with-http) below.
+Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
 ### Addressing with Native URL
 
 In future, subdomain convention will be replaced with native handler that provides the same origin-based guarantees:
 
-    ipfs://{cidv1b32}/path/to/resource               
-    
+    ipfs://{cidv1b32}/path/to/resource
+
+Read more: [notes on addressing with ipfs://](#notes-on-addressing-with-ipfs).
+
+### Addressing with URI
+
+In contexts that do not require origin-based security a simple URI can be used for addressing both IPFS and IPNS resources.
+We argue that paths are the better canonical address and that all kinds of things with different semantics can live in a shared universal namespace.  To provide a first step towards that goal, the dweb: URI is proposed:
+
+    dweb:/ipfs/{cidv1b32}/path/to/resource
+
+Read more: [notes on addressing with dweb:](#notes-on-addressing-with-dweb).
+
 ## References
 - [The four stages of the upgrade path for path addressing](https://github.com/ipfs/specs/pull/152#issuecomment-284628862)
 - [CID as a Subdomain](https://github.com/ipfs/in-web-browsers/issues/89)
@@ -143,4 +155,16 @@ The first element after double slash is an opaque identifier representing
 the content root.  It is interpreted as an authority component used for Origin
 calculation, which provides necessary isolation between security contexts of diferent content trees.
 
+### Notes on addressing with `dweb:`
 
+We're not trying to bring in all the possible sources of data, or interfaces into this namespace. 
+We only work on content-addressed stuff here. 
+
+Why not just only `ipfs://` and `ipns://`?
+
+- These URLs satisfy the content-addressing requirement
+- They don't satisfy the universal-data-namespace requirement
+- [We want to leave room for others in this new addressing scheme](https://github.com/arewedistributedyet/arewedistributedyet/issues/28)
+
+
+    

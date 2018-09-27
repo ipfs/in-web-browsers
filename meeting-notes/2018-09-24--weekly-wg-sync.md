@@ -6,6 +6,7 @@
     - @fsdiogo
     - @alanshaw
     - @olizilla
+    - @hacdias
 
 ## Goals
 

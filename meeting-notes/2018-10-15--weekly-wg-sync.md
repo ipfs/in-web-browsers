@@ -6,7 +6,6 @@
     - @fsdiogo
     - @olizilla
     - @hacdias
-    - @fsdiogo
 
 ## Goals
 

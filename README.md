@@ -21,14 +21,13 @@ and various Chromium-based browsers such as
 <img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave.  
 Check [its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and [**install it**](https://github.com/ipfs-shipyard/ipfs-companion#install) today!
 
-Exciting ongoing work: [Exposing IPFS API via `window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs),
-[mozilla/libdweb](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md):
-[native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533),
-[local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553)
+##### Ongoing WebExtension Experiments
+- [Exposing IPFS API via `window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs)
+- [Mozilla hosts a community effort called `libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions with a goal of enabling dweb protocols in Firefox through browser add-ons. [IPFS libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md) include [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553). The long term goal of this project is to integrate these APIs into the WebExtensions ecosystem.
 
 ### JavaScript Libraries
 Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (**full IPFS node in JS**) with your client-side application
-or use [`js-ipfs-api`](https://github.com/ipfs/js-ipfs-api) (**HTTP API client library**) to connect to external daemon running on local or remote machine. Make sure to check `/examples` in both repos.
+or use [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs-http-client) (**HTTP API client library**) to connect to external daemon running on local or remote machine. Make sure to check `/examples` in both repos.
 
 #### ..in Service Workers
 
@@ -45,6 +44,16 @@ We invite everyone to submit questions and suggestions for improvements via issu
 DNSLink is mapping a domain name to an IPFS address by means of DNS TXT record. 
 
 Read [DNSLink guide](https://docs.ipfs.io/guides/concepts/dnslink/) for details such as setting it up on your own website and [DNSLink in IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/dnslink.md) to see additional benefits of using our browser extension.
+
+#### Experiment: Signed HTTP Exchanges and WebPackage
+
+Signed HTTP Exchanges (SXG) are experimental spec proposed by Google to decouple the origin of the content from who distributes it: [read more](https://github.com/ipfs/in-web-browsers/issues/121).
+
+IPFS Gateway at `ipfs.io` participates in [Origin Trial for Signed HTTP Exchange (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges), starting with Google Chrome 71. This means [anyone can publish SXG](https://developers.google.com/web/updates/2018/11/signed-exchanges#creating_your_sxg) on IPFS and regular Chrome can load it from our gateway without any additional setup on user side.
+
+
+
+
 
 ## Resources
 

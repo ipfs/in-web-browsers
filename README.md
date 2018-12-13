@@ -70,10 +70,10 @@ IPFS Gateway at `ipfs.io` participates in [Origin Trial for Signed HTTP Exchange
 
 #### Related Endeavours
 
-- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A Web Extension to give your browser super powers.
-- [IPFS WebUI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard
+- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A WebExtension to give your browser super powers.
+- [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard shipped with daemon, desktop app or browser extension
 - [js-ipfs](https://github.com/ipfs/js-ipfs) - IPFS implementation in JavaScript
 - [HTTP API Documentation](https://docs.ipfs.io/reference/api/http/) - When an IPFS node (go-ipfs or js-ipfs) is running as a daemon, it exposes an HTTP API that allows you to control the node and run the same commands you can from the command line.
-    - [js-ipfs-api](https://github.com/ipfs/js-ipfs-api) - A client library for the IPFS HTTP API, implemented in JavaScript
+    - [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client) - A client library for the IPFS HTTP API, implemented in JavaScript
 - [IPFS GUI Working Group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifying and leveling up IPFS interfaces and the user journey into the Distributed Web
 - [Dynamic Data and Capabilities in IPFS Working Group](https://github.com/ipfs/dynamic-data-and-capabilities) -  building blocks that enable collaborative applications, providing solutions for security, identity, access control, concurrency, synchronization, offline and near-real-time collaboration on top of IPFS

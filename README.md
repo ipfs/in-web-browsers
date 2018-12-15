@@ -1,4 +1,4 @@
-# IPFS In Web Browsers Working Group
+# IPFS Integration in Web Browsers Working Group
 [![#ipfs](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs) [![#ipfs-in-web-browsers](https://img.shields.io/badge/irc-%23ipfs--in--web--browsers-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs-in-web-browsers)
 
 > Tracking the Path to getting IPFS and other Decentralized Protocols Natively Supported in Web Browsers.
@@ -50,7 +50,9 @@ DNSLink is mapping a domain name to an IPFS address by means of DNS TXT record.
 
 Read [DNSLink guide](https://docs.ipfs.io/guides/concepts/dnslink/) for details such as setting it up on your own website and [DNSLink in IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/dnslink.md) to see additional benefits of using our browser extension.
 
-#### Experiment: Signed HTTP Exchanges and WebPackage
+### Other Experiments
+
+#### Signed HTTP Exchanges and WebPackage
 
 Signed HTTP Exchanges (SXG) are experimental spec proposed by Google to decouple the origin of the content from who distributes it: [read more](https://github.com/ipfs/in-web-browsers/issues/121).
 

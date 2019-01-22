@@ -29,6 +29,7 @@ Check [its features](https://github.com/ipfs-shipyard/ipfs-companion#features) a
 ##### Ongoing WebExtension Experiments
 - [Exposing IPFS API via `window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md#notes-on-exposing-ipfs-api-as-windowipfs)
 - [Mozilla hosts a community effort called `libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions with a goal of enabling dweb protocols in Firefox through browser add-ons. [IPFS libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md) include [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553). The long term goal of this project is to integrate these APIs into the WebExtensions ecosystem.
+- [Support `chrome.sockets.*` APIs in Chromium browsers](https://github.com/ipfs-shipyard/ipfs-companion/issues/664)
 
 ### JavaScript Libraries
 Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (**full IPFS node in JS**) with your client-side application

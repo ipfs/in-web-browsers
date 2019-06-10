@@ -20,15 +20,28 @@
 
 ### Addressing with HTTP
 
+#### Paths 
 
 When site isolation does not matter gateway can expose IPFS namespaces as regular URL paths:
 
     https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
     https://<gateway-host>.tld/ipns/<keyid_or_fqdn>/path/to/resource
+    
+Examples: 
 
-When origin-based security perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
+    https://gateway.ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+    https://gateway.ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
+    https://gateway.ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
+
+#### Subdomains
+
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
 
     https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
+    
+Example:
+
+    https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
 
 Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
@@ -37,6 +50,10 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 In future, subdomain convention will be replaced with native handler that provides the same origin-based guarantees:
 
     ipfs://{cidv1b32}/path/to/resource
+    
+Example:
+
+    ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 
 Read more: [notes on addressing with ipfs://](#notes-on-addressing-with-ipfs).
 
@@ -46,6 +63,11 @@ In contexts that do not require origin-based security a simple URI can be used f
 We argue that paths are the better canonical address and that all kinds of things with different semantics can live in a shared universal namespace.  To provide a first step towards that goal, the dweb: URI is proposed:
 
     dweb:/ipfs/{cidv1b32}/path/to/resource
+
+Example:
+
+    dweb://ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+    dweb://ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html  
 
 Read more: [notes on addressing with dweb:](#notes-on-addressing-with-dweb).
 

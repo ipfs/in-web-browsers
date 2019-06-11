@@ -3,13 +3,15 @@
 
 
 > ### Status of This Memo
-> 
+>
 > This living document specifies current set of conventions for the IPFS community,
 > and requests discussion and suggestions for improvements via PR.
 
 ## Table of Contents
 
-- [Summary](#tldr)
+- [**TL;DR**](#tldr)
+- [With HTTP](#addressing-with-http)
+- [With New URIs](#addressing-with-native-url)
 - [References](#references)
 - [Appendices](#appendices)
   - Notes on addressing with [http://](#notes-on-addressing-with-http)
@@ -18,34 +20,87 @@
 
 ## TL;DR
 
-### Addressing with HTTP
+If no native protocol handler is available, redirect to a gateway:
 
+```bash
+ipfs://{cid}                → https://{gateway}/ipfs/{cid}
+ipns://{libp2p-key}         → https://{gateway}/ipns/{libp2p-key}
+ipns://{fqdn-with-dnslink}  → https://{gateway}/ipns/{fqdn-with-dnslink}
+```
+
+With native protocol handlers, follow below:
+
+```bash
+ipfs://{cidv1base32}
+ipfs://{cidv0} → redirect → ipfs://{cidv1base32} # CIDv0 is case-sensitive Base58, does not work as Origin authority
+
+ipns://{libp2p-key-in-cidv1base32}
+ipns://{libp2p-key-in-base58} → redirect → ipns://{libp2p-key-in-cidv1}  # Base58, does not work as Origin authority
+
+ipns://{fqdn-with-dnslink}
+ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to improve UX :-)
+
+dweb:/ipfs/{root}/{resource} → redirect →  ipfs://{root}/{resource}  # ensures {root} is the authority component
+dweb:/ipns/{root}/{resource} → redirect →  ipns://{root}/{resource}  # ensures {root} is the authority component
+```
+
+## Addressing with HTTP
+
+### Paths
 
 When site isolation does not matter gateway can expose IPFS namespaces as regular URL paths:
 
     https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
     https://<gateway-host>.tld/ipns/<keyid_or_fqdn>/path/to/resource
 
-When origin-based security perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
+Examples:
+
+    https://gateway.ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+    https://gateway.ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
+    https://gateway.ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
+
+### Subdomains
+
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
 
     https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
 
+Example:
+
+    https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
+
 Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
-### Addressing with Native URL
+## Addressing with Native URL
 
 In future, subdomain convention will be replaced with native handler that provides the same origin-based guarantees:
 
     ipfs://{cidv1b32}/path/to/resource
 
+Example:
+
+    ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+
 Read more: [notes on addressing with ipfs://](#notes-on-addressing-with-ipfs).
 
-### Addressing with URI
+## Addressing with URI
+
+> **Implementation Warning:**
+> web browsers often implement custom URIs in a way that enforces Origin to be either equal `null` or based on the first label after `:`.
+> This makes proper security isolation of  content loaded via `dweb:/ipfs/{root}/` difficult to get right, and it may be easier to redirect to `ipfs://{root}`.
 
 In contexts that do not require origin-based security a simple URI can be used for addressing both IPFS and IPNS resources.
+
 We argue that paths are the better canonical address and that all kinds of things with different semantics can live in a shared universal namespace.  To provide a first step towards that goal, the dweb: URI is proposed:
 
     dweb:/ipfs/{cidv1b32}/path/to/resource
+    dweb:/ipns/{libp2p-key-in-cidv1base32}/path/to/resource
+    dweb:/ipns/{fqdn-with-dnslink}/path/to/resource
+
+Example:
+
+    dweb:/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+    dweb:/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html  
 
 Read more: [notes on addressing with dweb:](#notes-on-addressing-with-dweb).
 
@@ -55,9 +110,9 @@ Read more: [notes on addressing with dweb:](#notes-on-addressing-with-dweb).
 - [IPFS: Migration to CIDv1 (default base32)](https://github.com/ipfs/ipfs/issues/337)
 - [Support Custom Protocols in WebExtension](https://github.com/lidel/ipfs-firefox-addon/issues/164)
 - [mozilla/libdweb experiment: ipfs:// protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533)
-   
+
 ## Appendices
-   
+
 ### Notes on addressing with `http://`
 
 The first stage on the upgrade path are HTTP gateways.
@@ -125,7 +180,7 @@ According to [RFC 1035](http://tools.ietf.org/html/rfc1035) subdomains (aka
 of content addressing identifier types that can be used without need for an
 additional conversion step.
 
-Due to this IPFS community [decided](https://github.com/ipfs/ipfs/issues/337) to use lowercased base32 
+Due to this IPFS community [decided](https://github.com/ipfs/ipfs/issues/337) to use lowercased base32
 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6) - no padding - highest letter)
 as the default base encoding of [CIDv1](https://github.com/ipld/cid#cidv1) (our binary identifiers).
 
@@ -137,9 +192,9 @@ Suborigins are a
 provide a new mechanism for allowing sites to separate their content by
 creating synthetic origins while serving content from a single physical origin.
 
-A [`suborigin` header](https://w3c.github.io/webappsec-suborigins/#the-suborigin-header) 
+A [`suborigin` header](https://w3c.github.io/webappsec-suborigins/#the-suborigin-header)
 SHOULD be returned by HTTP gateway and contain a value
-unique to the current content addressing root. 
+unique to the current content addressing root.
 
 Unfortunately due to limited adoption suborigin have no practical use.
 
@@ -157,14 +212,11 @@ calculation, which provides necessary isolation between security contexts of dif
 
 ### Notes on addressing with `dweb:`
 
-We're not trying to bring in all the possible sources of data, or interfaces into this namespace. 
-We only work on content-addressed stuff here. 
+We're not trying to bring in all the possible sources of data, or interfaces into this namespace.
+We only work on content-addressed stuff here.
 
 Why not just only `ipfs://` and `ipns://`?
 
 - These URLs satisfy the content-addressing requirement
 - They don't satisfy the universal-data-namespace requirement
 - [We want to leave room for others in this new addressing scheme](https://github.com/arewedistributedyet/arewedistributedyet/issues/28)
-
-
-    

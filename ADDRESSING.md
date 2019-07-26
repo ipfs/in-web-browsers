@@ -25,6 +25,7 @@ If no native protocol handler is available, redirect to a gateway:
 ```bash
 ipfs://{cid}                → https://{gateway}/ipfs/{cid}
 ipns://{libp2p-key}         → https://{gateway}/ipns/{libp2p-key}
+ipfs://{fqdn-with-dnslink}  → https://{gateway}/ipns/{fqdn-with-dnslink}
 ipns://{fqdn-with-dnslink}  → https://{gateway}/ipns/{fqdn-with-dnslink}
 ```
 
@@ -37,8 +38,8 @@ ipfs://{cidv0} → redirect → ipfs://{cidv1base32} # CIDv0 is case-sensitive B
 ipns://{libp2p-key-in-cidv1base32}
 ipns://{libp2p-key-in-base58} → redirect → ipns://{libp2p-key-in-cidv1}  # Base58, does not work as Origin authority
 
-ipns://{fqdn-with-dnslink}
-ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to improve UX :-)
+ipfs://{fqdn-with-dnslink}
+ipns://{fqdn-with-dnslink} → redirect → ipfs://{fqdn-with-dnslink} # just to improve UX :-)
 
 dweb:/ipfs/{root}/{resource} → redirect →  ipfs://{root}/{resource}  # ensures {root} is the authority component
 dweb:/ipns/{root}/{resource} → redirect →  ipns://{root}/{resource}  # ensures {root} is the authority component
@@ -76,10 +77,12 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 In future, subdomain convention will be replaced with native handler that provides the same origin-based guarantees:
 
     ipfs://{cidv1b32}/path/to/resource
+    ipfs://{fqdn-with-dnslink}/path/to/resource
 
 Example:
 
     ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+    ipfs://tr.wikipedia-on-ipfs.org/wiki/Vincent_van_Gogh.html
 
 Read more: [notes on addressing with ipfs://](#notes-on-addressing-with-ipfs).
 

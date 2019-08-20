@@ -10,13 +10,13 @@
 ## Table of Contents
 
 - [**TL;DR**](#tldr)
-- [With HTTP](#addressing-with-http)
-- [With New URIs](#addressing-with-native-url)
+- [Addressing with `http://`](#addressing-with-http-url)
+- [Addressing with `ipfs://` and `ipns://`](#addressing-with-native-url)
 - [References](#references)
 - [Appendices](#appendices)
-  - Notes on addressing with [http://](#notes-on-addressing-with-http)
-  - Notes on addressing with [ipfs://](#notes-on-addressing-with-ipfs)
-  - Notes on addressing with [dweb:](#notes-on-addressing-with-dweb)  
+  - On [`http://`](#notes-on-addressing-with-http) 
+  - On [`ipfs://`](#notes-on-addressing-with-ipfs) 
+  - Future: addressing with shared [`dweb`](#future-addressing-with-shared-dweb-namespace) namespace
 
 ## TL;DR
 
@@ -39,12 +39,9 @@ ipns://{libp2p-key-in-base58} → redirect → ipns://{libp2p-key-in-cidv1}  # B
 
 ipns://{fqdn-with-dnslink}
 ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to improve UX :-)
-
-dweb:/ipfs/{root}/{resource} → redirect →  ipfs://{root}/{resource}  # ensures {root} is the authority component
-dweb:/ipns/{root}/{resource} → redirect →  ipns://{root}/{resource}  # ensures {root} is the authority component
 ```
 
-## Addressing with HTTP
+## Addressing with HTTP URL
 
 ### Paths
 
@@ -73,7 +70,7 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
 ## Addressing with Native URL
 
-In future, subdomain convention will be replaced with native handler that provides the same origin-based guarantees:
+Where possible, subdomain convention should be replaced with native handler that provides the same origin-based guarantees:
 
     ipfs://{cidv1b32}/path/to/resource
 
@@ -82,27 +79,6 @@ Example:
     ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 
 Read more: [notes on addressing with ipfs://](#notes-on-addressing-with-ipfs).
-
-## Addressing with URI
-
-> **Implementation Warning:**
-> web browsers often implement custom URIs in a way that enforces Origin to be either equal `null` or based on the first label after `:`.
-> This makes proper security isolation of  content loaded via `dweb:/ipfs/{root}/` difficult to get right, and it may be easier to redirect to `ipfs://{root}`.
-
-In contexts that do not require origin-based security a simple URI can be used for addressing both IPFS and IPNS resources.
-
-We argue that paths are the better canonical address and that all kinds of things with different semantics can live in a shared universal namespace.  To provide a first step towards that goal, the dweb: URI is proposed:
-
-    dweb:/ipfs/{cidv1b32}/path/to/resource
-    dweb:/ipns/{libp2p-key-in-cidv1base32}/path/to/resource
-    dweb:/ipns/{fqdn-with-dnslink}/path/to/resource
-
-Example:
-
-    dweb:/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
-    dweb:/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html  
-
-Read more: [notes on addressing with dweb:](#notes-on-addressing-with-dweb).
 
 ## References
 - [The four stages of the upgrade path for path addressing](https://github.com/ipfs/specs/pull/152#issuecomment-284628862)
@@ -210,13 +186,8 @@ The first element after double slash is an opaque identifier representing
 the content root.  It is interpreted as an authority component used for Origin
 calculation, which provides necessary isolation between security contexts of diferent content trees.
 
-### Notes on addressing with `dweb:`
+### Future: addressing with shared `dweb` namespace
 
-We're not trying to bring in all the possible sources of data, or interfaces into this namespace.
-We only work on content-addressed stuff here.
-
-Why not just only `ipfs://` and `ipns://`?
-
-- These URLs satisfy the content-addressing requirement
-- They don't satisfy the universal-data-namespace requirement
-- [We want to leave room for others in this new addressing scheme](https://github.com/arewedistributedyet/arewedistributedyet/issues/28)
+We are exploring the idea of a shared `dweb` namespace to remove the complexity of adressing IPFS and other content-addressed protocols. More details can be found at:
+- (A) the `dweb://` protocol handler ([arewedistributedyet/issues/28](https://github.com/arewedistributedyet/arewedistributedyet/issues/28))
+- (B) the `.dweb` special-use top-level domain name ([arewedistributedyet/issues/34](https://github.com/arewedistributedyet/arewedistributedyet/issues/34))

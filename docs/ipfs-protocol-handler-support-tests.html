@@ -1,0 +1,143 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="//unpkg.com/tachyons@4.11.1/css/tachyons.min.css" type="text/css">
+  <link rel="stylesheet" href="//unpkg.com/ipfs-css@0.13.1/ipfs.css" type="text/css">
+  </head>
+
+<body class='sans-serif bg-white'>
+  <header class='pv3 ph2 ph3-l bg-navy cf'>
+    <a href="https://ipfs.io/" title='ipfs.io'>
+      <img src="https://ipfs.io/images/ipfs-logo.svg" class='v-mid' style='height:50px' />
+    </a>
+    <h1 class='aqua fw2 montserrat dib ma0 pv2 ph1 v-mid fr f3 lh-copy'><code></code> protocol handler smoke-tests</h1>
+  </header>
+  <section class='pv4 pl2 pl5-l'>
+
+    <p class="charcoal-muted">
+      Below are checks for protocol handler support defined in <a class='charcoal-muted hover-teal link underline' href="https://github.com/ipfs/in-web-browsers/blob/master/ADDRESSING.md">IPFS Addressing Spec</a>.<br/>
+      Source: <a class='charcoal-muted hover-teal link underline' href="https://github.com/ipfs/in-web-browsers">ipfs/in-web-browsers</a>
+    </p>
+
+    <div class='pt4'>
+      <div class='db pb1 w-100 fw2 tracked ttu f3 teal-muted link'>
+        A HREF
+      </div>
+      <p>Clicking on each link should result in the same content loading as HTTP equivalent:</p>
+      <ol class='f4 ml5 pl0 list'>
+        <li class="lh-copy pv3">
+          <a class="link navy hover-teal link underline" href="ipfs://QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR">ipfs://QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR</a> (CIDv0)<br/>
+          → <a class="link navy hover-teal link underline" href="https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR">https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR</a>
+        </li>
+        <li class="lh-copy pv3">
+          <a class="link navy hover-teal link underline" href="ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi">ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi</a> (CIDv1)<br/>
+          → <a class="link navy hover-teal link underline" href="https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi">https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi</a>
+        </li>
+        <li class="lh-copy pv3">
+          <a class="link navy hover-teal link underline" href="ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html#Style_and_works">ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html#Style_and_works</a><br/>
+          → <a class="link navy hover-teal link underline" href="https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html#Style_and_works">https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html#Style_and_works</a>
+        </li>
+        <li class="lh-copy pv3">
+          <a class="link navy hover-teal link underline" href="ipns://en.wikipedia-on-ipfs.org/wiki/Vincent_van_Gogh.html#Style_and_works">ipns://en.wikipedia-on-ipfs.org/wiki/Vincent_van_Gogh.html#Style_and_works</a><br/>
+                    → <a class="link navy hover-teal link underline" href="https://ipfs.io/ipns/en.wikipedia-on-ipfs.org/wiki/Vincent_van_Gogh.html#Style_and_works">https://ipfs.io/ipns/en.wikipedia-on-ipfs.org/wiki/Vincent_van_Gogh.html#Style_and_works</a>
+        </li>
+      </ol>
+    </div>
+
+    <div class='pt5'>
+      <div class='db pb1 w-100 fw2 tracked ttu f3 teal-muted link'>
+        IMG SRC
+      </div>
+      <p>Embedding via<br/><code class="bg-snow charcoal">&lt;img src="ipfs://QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR" /&gt;</code></p>
+      <img src="ipfs://QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR" class="dib ml5 bg-red" width="225px" height="150px" alt="→ if you see this ipfs:// failed"/>
+      <p>..should produce the same result as: <br/><code class="bg-snow charcoal">&lt;img src="https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR" /&gt;</code></p>
+      <img src="https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR" class="dib ml5 bg-red"  width="225px" height="150px" alt="→ if you see this http:// failed"/>
+    </div>
+
+    <div class='pt5'>
+      <div class='db pb1 w-100 fw2 tracked ttu f3 teal-muted link'>
+        VIDEO SRC
+      </div>
+      <p>Embedding via<br/><code class="bg-snow charcoal">&lt;video src="ipfs://bafybeigwa5rlpq42cj3arbw27aprhjezhimhqkvhbb2kztjtdxyhjalr3q/big-buck-bunny_trailer.webm#t=5" &gt;</code></p>
+      <video src="ipfs://bafybeigwa5rlpq42cj3arbw27aprhjezhimhqkvhbb2kztjtdxyhjalr3q/big-buck-bunny_trailer.webm#t=5" controls width="320px" height="180px" class="dib ml5 bg-red"></video>
+      <p>..should produce the same result as:<br/><code class="bg-snow charcoal">&lt;video src="https://ipfs.io/ipfs/bafybeigwa5rlpq42cj3arbw27aprhjezhimhqkvhbb2kztjtdxyhjalr3q/big-buck-bunny_trailer.webm#t=5" &gt;</code></p>
+      <video src="https://ipfs.io/ipfs/bafybeigwa5rlpq42cj3arbw27aprhjezhimhqkvhbb2kztjtdxyhjalr3q/big-buck-bunny_trailer.webm#t=5" controls width="320px" height="180px" class="dib ml5 bg-red"></video>
+    </div>
+
+    <!-- TODO: to avoid confusion when ipfs-companion is installed, disabled for now until https://github.com/ipfs-shipyard/ipfs-companion/issues/816 is fixed
+    <div class='pt4'>
+      <div class='db pb1 w-100 fw2 tracked ttu f3 teal-muted link'>
+        IFRAME SRC
+      </div>
+      <p>Embedding via<br/><code class="bg-snow charcoal">&lt;iframe src="ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html"  &gt;</code></p>
+      <iframe sandbox src="ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html" width="320px" height="180px" class="dib bg-red"></iframe>
+      <p>Should work and produce the same result as<br/><code class="bg-snow charcoal">&lt;iframe src="https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html" &gt;</code></p>
+      <iframe sandbox src="https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html" width="320px" height="180px" class="dib bg-red"></iframe>
+    </div>
+    -->
+
+    <div class='pt5'>
+      <div class='db pb1 w-100 fw2 tracked ttu f3 teal-muted link'>
+        XHR (JS requests)
+      </div>
+      <p>Fetching data from <code class="bg-snow charcoal">ipfs://</code> via <code class="bg-snow charcoal">XMLHttpRequest</code>:</p>
+      <div id="xhrIpfs" class="ml5">(fetched data will appear here)</div>
+      <p>..should produce same result as <code class="bg-snow charcoal">XMLHttpRequest</code> to <code class="bg-snow charcoal">http://</code> gateway:</p>
+      <div id="xhrHttp" class="ml5">(fetched data will appear here)</div>
+    </div>
+    <div class='pt4'>
+      <div class='db pb1 w-100 fw2 tracked ttu f3 teal-muted link'>
+        fetch (JS requests)
+      </div>
+      <p>Fetching data from <code class="bg-snow charcoal">ipfs://</code> via <code class="bg-snow charcoal">fetch</code>:</p>
+      <div id="fetchIpfs" class="ml5">(fetched data will appear here)</div>
+      <p>..should produce same result as <code class="bg-snow charcoal">fetch</code> to a gateway over <code class="bg-snow charcoal">http://</code>:</p>
+      <div id="fetchHttp" class="ml5">(fetched data will appear here)</div>
+    </div>
+  </section>
+
+<footer class='pv5 pl2 pl5-l'>
+  Source: <a class='charcoal-muted hover-teal link underline' href="https://github.com/ipfs/in-web-browsers">ipfs/in-web-browsers</a>
+</footer>
+
+  <script type="text/javascript">
+   function init() {
+     async function xhrTest(uri, outputId) {
+       const xhrData = document.getElementById(outputId)
+       const xhr = new XMLHttpRequest()
+       xhr.onload = function () {
+         xhrData.innerText = "✅ OK! xhr.onload for " + uri
+       }
+       xhr.onerror = (err) => {
+         console.log('xhrTest failed', err);
+         xhrData.innerText = "💢 FAILED! xhr.onerror for " + uri + " (see error in Console) "
+       }
+       xhr.open('get', uri, true)
+       xhr.send()
+     }
+     xhrTest('ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi', 'xhrIpfs')
+     xhrTest('https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi', 'xhrHttp')
+
+     async function fetchTest(uri, outputId) {
+       const fetchData = document.getElementById(outputId)
+
+       try {
+         const response = await fetch(uri)
+         fetchData.innerText = "✅ OK! successful fetch for " + uri
+       } catch (err) {
+         console.log('fetchTest failed', err);
+         fetchData.innerText = "💢 FAILED! error while fetch(" + uri + ") (see error in Console) "
+       }
+     }
+     fetchTest('ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi', 'fetchIpfs')
+     fetchTest('https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi', 'fetchHttp')
+   }
+   if (document.addEventListener) document.addEventListener("DOMContentLoaded", init, false)
+   else if (document.attachEvent) document.attachEvent("onreadystatechange", init)
+   else window.onload = init
+  </script>
+
+</body>
+</html>

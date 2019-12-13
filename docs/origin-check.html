@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="//unpkg.com/tachyons@4.11.1/css/tachyons.min.css" type="text/css">
+  <link rel="stylesheet" href="//unpkg.com/ipfs-css@0.13.1/ipfs.css" type="text/css">
+  </head>
+
+<body class='sans-serif bg-white'>
+  <section class='pa0 ma0'>
+
+    <div>
+      <p class="ma0 pb2">Values exposed under <code class="bg-snow charcoal">window.location</code>:</p>
+      <ol class='ma0 pa0 list'>
+        <li class="lh-copy">
+          <code class="charcoal">href</code> =
+          <code class="bg-snow charcoal"><script>document.write(window.location.href)</script></code>
+        </li>        
+        <li class="lh-copy">
+          <code class="charcoal">origin</code>=
+          <code class="bg-snow charcoal"><script>document.write(window.location.origin)</script></code>
+        </li>
+        <li class="lh-copy">
+          <code class="charcoal">protocol</code>=
+          <code class="bg-snow charcoal"><script>document.write(window.location.protocol)</script></code>
+        </li>
+      </ol>
+    </div>
+
+  </section>
+
+</body>
+</html>

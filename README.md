@@ -31,7 +31,7 @@ Check [its features](https://github.com/ipfs-shipyard/ipfs-companion#features) a
 - [Mozilla hosts a community effort called `libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions with a goal of enabling dweb protocols in Firefox through browser add-ons. [IPFS libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md) include [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553). The long term goal of this project is to integrate these APIs into the WebExtensions ecosystem.
 - [Support `chrome.sockets.*` APIs in Chromium browsers](https://github.com/ipfs-shipyard/ipfs-companion/issues/664)
 
-### JavaScript Libraries
+### JavaScript Ecosystem
 Currently in order to run IPFS in a web browser, you have to either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (**full IPFS node in JS**) with your client-side application
 or use [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs-http-client) (**HTTP API client library**) to connect to external daemon running on local or remote machine. Make sure to check `/examples` in both repos.
 
@@ -39,6 +39,15 @@ or use [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs-http-client) (**H
 
 - Tracking related work: [#55](https://github.com/ipfs/in-web-browsers/issues/55)
   - Highlight: IPFS gateway fully running on a Service Worker [service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway)
+
+### Accessing HTTP API
+
+Standalone IPFS daemon (go-ipfs or js-ipfs in Node) exposes API at `/api/v0/`. 
+It is an RPC-style API over HTTP POST.
+
+- [API Reference](https://docs.ipfs.io/reference/api/http/)
+- [Client libraries in various languages](https://github.com/ipfs/ipfs#http-client-libraries)
+
 
 ### IPFS Addressing in Web Browsers
 

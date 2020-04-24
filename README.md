@@ -68,17 +68,12 @@ Signed HTTP Exchanges (SXG) are experimental spec proposed by Google to decouple
 
 IPFS Gateway at `ipfs.io` participates in [Origin Trial for Signed HTTP Exchange (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges), starting with Google Chrome 71. This means [anyone can publish SXG](https://developers.google.com/web/updates/2018/11/signed-exchanges#creating_your_sxg) on IPFS and regular Chrome can load it from our gateway without any additional setup on user side.
 
-
-
-
-
 ## Resources
 
 #### PM
 - [Meeting Notes](https://github.com/ipfs/in-web-browsers/tree/master/meeting-notes)
 - [ROADMAP](ROADMAP.md)
     - [Quarterly Objectives and Key Results (OKRs)](https://github.com/ipfs/pm/blob/master/OKR/WB.md)
-- [![Waffle.io - Columns and their card count](https://badge.waffle.io/ipfs/in-web-browsers.svg?columns=all)](https://waffle.io/ipfs/in-web-browsers)
 
 #### Related Endeavours
 

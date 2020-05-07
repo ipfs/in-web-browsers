@@ -20,12 +20,19 @@
 
 ## TL;DR
 
-If no native protocol handler is available, redirect to a gateway:
+If no native protocol handler is available, redirect to a gateway.  
+In web browser contexts where a local IPFS node is available, use [subdomain gateway](https://docs-beta.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`:
 
 ```bash
-ipfs://{cid}                → https://{gateway}/ipfs/{cid}
-ipns://{libp2p-key}         → https://{gateway}/ipns/{libp2p-key}
-ipns://{fqdn-with-dnslink}  → https://{gateway}/ipns/{fqdn-with-dnslink}
+ipfs://{cid}                → https://{cid}.ipfs.dweb.link
+ipns://{libp2p-key}         → https://{libp2p-key}.ipns.dweb.link
+```
+
+When DNSLink hostname is used, redirect to subdomain only with `localhost`, use original HTTP URL otherwise:
+
+```
+ipns://{fqdn-with-dnslink}  → https://{fqdn-with-dnslink}.ipns.localhost
+                            → https://{fqdn-with-dnslink} (if no localhost node)
 ```
 
 With native protocol handlers, follow below:
@@ -43,6 +50,19 @@ ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to
 
 ## Addressing with HTTP URL
 
+### Subdomains
+
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
+
+    https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
+    https://<cidv1-base32-libp2p-key>.ipns.<gateway-host>.tld/path/to/resource
+
+Example:
+
+    https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
+
+Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
+
 ### Paths
 
 When site isolation does not matter gateway can expose IPFS namespaces as regular URL paths:
@@ -55,18 +75,6 @@ Examples:
     https://gateway.ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
     https://gateway.ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
     https://gateway.ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
-
-### Subdomains
-
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
-
-    https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
-
-Example:
-
-    https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
-
-Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
 ## Addressing with Native URL
 

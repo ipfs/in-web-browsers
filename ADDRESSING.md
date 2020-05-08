@@ -20,8 +20,7 @@
 
 ## TL;DR
 
-If no native protocol handler is available, redirect to a gateway.  
-In web browser contexts where a local IPFS node is available, use [subdomain gateway](https://docs-beta.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`:
+If no native protocol handler is available, redirect to a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs-beta.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`:
 
 ```bash
 ipfs://{cid}                → https://{cid}.ipfs.dweb.link

@@ -20,18 +20,20 @@
 
 ## TL;DR
 
-If no native protocol handler is available, redirect to a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`:
+If no native protocol handler is available, redirect to IPFS path at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`. 
+
+In both cases point at IPFS path first, to ensure gateway takes care of CID normalization into a DNS-safe form:
 
 ```bash
-ipfs://{cid}                → https://{cid}.ipfs.dweb.link
-ipns://{libp2p-key}         → https://{libp2p-key}.ipns.dweb.link
+ipfs://{cid}          → https://dweb.link/ipfs/{cid}        → HTTP301 → https://{dns-safe-cid}.ipfs.dweb.link
+ipns://{libp2p-key}   → https://dweb.link/ipns/{libp2p-key} → HTTP301 → https://{dns-safe-cid}.ipns.dweb.link
 ```
 
 When DNSLink hostname is used, redirect to subdomain only with `localhost`, use original HTTP URL otherwise:
 
 ```
-ipns://{fqdn-with-dnslink}  → https://{fqdn-with-dnslink}.ipns.localhost
-                            → https://{fqdn-with-dnslink} (if no localhost node)
+ipns://{fqdn}         → https://localhost/ipns/{fqdn}       → HTTP301 → https://{fqdn}.ipns.localhost
+                      → https://{fqdn} (if no local node)
 ```
 
 With native protocol handlers, follow below:
@@ -53,12 +55,19 @@ ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to
 
 When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
 
-    https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
-    https://<cidv1-base32-libp2p-key>.ipns.<gateway-host>.tld/path/to/resource
+    https://<cid>.ipfs.<gateway-host>.tld/path/to/resource
+    https://<libp2p-key-cid>.ipns.<gateway-host>.tld/path/to/resource
 
 Example:
 
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
+
+Subdomain gateway feature in go-ipfs takes care of necessary CID conversion when IPFS path is requested:
+
+```
+https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html → HTTP 301 
+  → https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html
+```
 
 Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 

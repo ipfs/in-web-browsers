@@ -57,8 +57,8 @@ ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to
 
 When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
 
-    https://<cid>.ipfs.<gateway-host>.tld/path/to/resource
-    https://<libp2p-key-cid>.ipns.<gateway-host>.tld/path/to/resource
+    https://{cid}.ipfs.{gateway-host}/path/to/resource
+    https://{libp2p-key-cid}.ipns.{gateway-host}/path/to/resource
 
 Example:
 
@@ -77,8 +77,8 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
 When site isolation does not matter gateway can expose IPFS namespaces as regular URL paths:
 
-    https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
-    https://<gateway-host>.tld/ipns/<keyid_or_fqdn>/path/to/resource
+    https://{gateway-host}/ipfs/{cid}/path/to/resource
+    https://{gateway-host}/ipns/{libp2p-key-or-fqdn}/path/to/resource
 
 Examples:
 
@@ -90,7 +90,7 @@ Examples:
 
 Where possible, subdomain convention should be replaced with native handler that provides the same origin-based guarantees:
 
-    ipfs://{cidv1b32}/path/to/resource
+    ipfs://{cid}/path/to/resource
 
 Example:
 
@@ -154,7 +154,7 @@ HTTP gateway MAY:
 
 Gateway operator MAY work around single Origin limitation by creating artificial
 subdomains based on URL-safe version of root content identifier (eg.
-`<cidv1b32>.ipfs.foo.tld`).  Each subdomain provides separate Origin and creates an
+`{cidv1b32}.ipfs.foo.tld`).  Each subdomain provides separate Origin and creates an
 isolated security context at a cost of obfuscating path-based addressing.
 
 Benefits of this approach:

@@ -24,7 +24,9 @@ If no native protocol handler is available, redirect to path-based IPFS address 
 
 In both cases point at IPFS path first, to ensure gateway takes care of CID normalization into a DNS-safe form:
 
-```bash
+```
+Native URI            – HTTP Gateway                       (– Internal normalization done by HTTP Gateway)   
+
 ipfs://{cid}          → https://dweb.link/ipfs/{cid}        → HTTP301 → https://{dns-safe-cid}.ipfs.dweb.link
 ipns://{libp2p-key}   → https://dweb.link/ipns/{libp2p-key} → HTTP301 → https://{dns-safe-cid}.ipns.dweb.link
 ```

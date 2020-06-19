@@ -64,7 +64,7 @@ Example:
 
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
 
-Subdomain gateway feature in go-ipfs takes care of necessary CID conversion when IPFS path is requested:
+The subdomain gateway feature in go-ipfs takes care of necessary CID conversion when IPFS path is requested:
 
 ```
 https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html → HTTP 301 

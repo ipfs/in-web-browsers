@@ -22,7 +22,7 @@
 
 If no native protocol handler is available, redirect to path-based IPFS address at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`. 
 
-In both cases point at IPFS path first, to ensure gateway takes care of CID normalization into a DNS-safe form:
+In either case, point at IPFS path first to ensure gateway takes care of CID normalization into a DNS-safe form:
 
 ```
 Native URI            – HTTP Gateway                       (– Internal normalization done by HTTP Gateway)   

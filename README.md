@@ -15,12 +15,9 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 
 ### IPFS Companion
 
-[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol.  
-It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox (desktop and Android)
-and Chromium-based browsers including
+[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol. It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox (desktop and Android) and Chromium-based browsers including
 <img src="https://unpkg.com/@browser-logos/chrome@1.0.4/chrome_16x16.png" width="16" height="16">Chrome or
-<img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave.  
-Check out all of [IPFS Companion's features](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion-features) and [**install it**](https://github.com/ipfs-shipyard/ipfs-companion#install) today!
+<img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave. Check out all of [IPFS Companion's features](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion-features) and [**install it**](https://github.com/ipfs-shipyard/ipfs-companion#install) today!
 
 
 | <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16"> [Firefox](https://www.mozilla.org/firefox/new/) / [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox) | <img src="https://unpkg.com/@browser-logos/chrome@1.0.4/chrome_16x16.png" width="16" height="16"> [Chrome](https://www.google.com/chrome/) / <img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16"> [Brave](https://brave.com/)
@@ -39,8 +36,7 @@ At present, in order to run IPFS in a web browser, you must either bundle [`js-i
 
 #### ... in service workers
 
-- Tracking related work: [#55](https://github.com/ipfs/in-web-browsers/issues/55)
-  - Highlight: IPFS gateway fully running on a service worker [service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway)
+- Tracking related work in [issue #55](https://github.com/ipfs/in-web-browsers/issues/55) (highlight: IPFS gateway fully running on a service worker [service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway))
 
 ### Accessing the IPFS HTTP API
 
@@ -122,10 +118,9 @@ We do hang out on IRC — see the [#ipfs](https://www.irccloud.com/invite?channe
 
 If you're looking for endeavors related to IPFS browser integration work, these resources may be helpful.
 
-- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) - A WebExtension to give your browser super powers.
-- [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui) - The IPFS Dashboard shipped with daemon, desktop app or browser extension
-- [js-ipfs](https://github.com/ipfs/js-ipfs) - IPFS implementation in JavaScript
-- [HTTP API Documentation](https://docs.ipfs.io/reference/api/http/) - When an IPFS node (go-ipfs or js-ipfs) is running as a daemon, it exposes an HTTP API that allows you to control the node and run the same commands you can from the command line.
-    - [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client) - A client library for the IPFS HTTP API, implemented in JavaScript
-- [IPFS GUI Working Group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - Unifying and leveling up IPFS interfaces and the user journey into the Distributed Web
-- [Dynamic Data and Capabilities in IPFS Working Group](https://github.com/ipfs/dynamic-data-and-capabilities) -  building blocks that enable collaborative applications, providing solutions for security, identity, access control, concurrency, synchronization, offline and near-real-time collaboration on top of IPFS
+- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion): Harness the power of your local or `js-ipfs` node directly inside your favorite Chromium or Firefox browser, enabling support for ipfs:// addresses, automatic IPFS gateway loading of websites and file paths, easy IPFS file import and sharing, and more
+- [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui): The IPFS dashboard shipped with the IPFS daemon or IPFS Desktop
+- [js-ipfs](https://github.com/ipfs/js-ipfs): IPFS implementation in JavaScript
+- [HTTP API documentation](https://docs.ipfs.io/reference/http/api/): Guide to the HTTP API exposed when an IPFS node (`go-ipfs` or `js-ipfs`) is running as a daemon; allows you to control the node and run the same commands you can from the command line
+    - [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client): Client library for the IPFS HTTP API implemented in JavaScript
+- [IPFS GUI group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - The other half of the IPFS Web Browsers & GUI Working Group, dedicated to creating and implementing standards and patterns for IPFS that are simple, accessible, reusable, and beautiful

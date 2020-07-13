@@ -11,9 +11,21 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 - **Web developers**: Web developers can enjoy a smooth experience working with IPFS in browser contexts
 - **Browser vendors**: Browser developers are empowered to meet the requirements of the distributed web
 
+## Contents
+
+- [Current projects](#current-projects)
+   - [Companion browser extension](#ipfs-companion-browser-extension)
+   - [IPFS and the JavaScript ecosystem](#ipfs-and-the-javascript-ecosystem)
+   - [Accessing the IPFS HTTP API](#accessing-the-ipfs-http-api)
+   - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
+   - [DNSLink](#dnslink)
+- 👉 [Q3 2020 update](#q3-2020-update)
+- [Get involved!](#get-involved) 
+- [Resources](#resources)
+
 ## Current projects
 
-### IPFS Companion
+### IPFS Companion browser extension
 
 [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol. It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox (desktop and Android) and Chromium-based browsers including
 <img src="https://unpkg.com/@browser-logos/chrome@1.0.4/chrome_16x16.png" width="16" height="16">Chrome or
@@ -25,18 +37,25 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 | [![Install From AMO](https://ipfs.io/ipfs/QmSX44XockQifmxE8Wdevkaa6vaqTXtGdH9t9aHWXZkuJq)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmPinSJKFYCMuTDh484dLk5Av4HpZRzBRR1KPv7TM7CBVF)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
 #### Other web extension experiments
-- Exposing the IPFS API via [`window.ipfs`](https://docs.ipfs.io/how-to/companion-window-ipfs/)
-- Mozilla hosts a community effort called [`libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions, with a goal of enabling dweb protocols in Firefox through browser add-ons:
+- Exposing the IPFS API via [`window.ipfs`](https://docs.ipfs.io/how-to/companion-window-ipfs/) 
+- Mozilla hosted a community effort called [`libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions, with a goal of enabling dweb protocols in Firefox through browser add-ons:
   - IPFS [libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md), including a [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553)
-  - The long-term goal of this project is to integrate these APIs into the WebExtensions ecosystem
-- Support for [`chrome.sockets.*` APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/664) in Chromium browsers
+  - The long-term goal of this project was to integrate these APIs into the WebExtensions ecosystem, but it did not get into Firefox Nightly yet (Q3 2020).
+- Support for [`chrome.sockets.*` APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/664) in Chromium browsers, deprioritized due to [EOL 2022](https://9to5google.com/2020/01/15/google-killing-chrome-apps/)
 
 ### IPFS and the JavaScript ecosystem
-At present, in order to run IPFS in a web browser, you must either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs-http-client) HTTP API client library to connect to an external daemon running on a local or remote machine. To learn more, make sure to check `/examples` in both of those repos.
+At present, in order to run IPFS in a web browser, you must either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) HTTP API client library to connect to an external daemon running on a local or remote machine. To learn more, make sure to check [`js-ipfs/examples`](https://github.com/ipfs/js-ipfs/tree/master/examples) and [`ipfs-http-client/examples`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client/examples).
 
-#### ... in service workers
+#### ... in shared worker 
 
-- Tracking related work in [issue #55](https://github.com/ipfs/in-web-browsers/issues/55) (highlight: IPFS gateway fully running on a service worker [service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway))
+- Enables sharing IPFS node across browsing contexts (tabs) on same origin
+- Tracking related work in [js-ipfs#3022](https://github.com/ipfs/js-ipfs/issues/3022)
+
+#### ... in service worker
+
+- Live demo at [js.ipfs.io](https://js.ipfs.io)
+- Due to the way browser vendors maintain service worker lifecycle, js-ipfs instance should be run outside of Service Worker
+- Tracking related work in [in-web-browsers#55](https://github.com/ipfs/in-web-browsers/issues/55) and [ipfs-shipyard/service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway)
 
 ### Accessing the IPFS HTTP API
 
@@ -46,9 +65,10 @@ The standalone IPFS daemon (either `go-ipfs` or `js-ipfs` in Node) exposes the A
 - [Client libraries in various languages](https://github.com/ipfs/ipfs#http-client-libraries)
 
 
-### IPFS addressing in web browsers
+### How to address IPFS on the web
 
-See [this memo](ADDRESSING.md) for the current set of URL conventions for the IPFS community. We invite everyone to submit questions and suggestions for improvements via issues/PR.
+- For regular users, see [guide to how to address IPFS content paths on the web](https://docs.ipfs.io/how-to/address-ipfs-on-web/)
+- For browser vendors and user agent developers: see [this memo](ADDRESSING.md) for the current set of URL conventions for the IPFS community. We invite everyone to submit questions and suggestions for improvements via issues/PR.
 
 #### DNSLink
 

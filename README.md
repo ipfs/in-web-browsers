@@ -19,7 +19,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
    - [Accessing the IPFS HTTP API](#accessing-the-ipfs-http-api)
    - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
    - [DNSLink](#dnslink)
-- 👉 [Q3 2020 update](#q3-2020-update)
+- [WG status](#wg-status)
 - [Get involved!](#get-involved) 
 - [Resources](#resources)
 
@@ -36,26 +36,18 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [![Install From AMO](https://ipfs.io/ipfs/QmSX44XockQifmxE8Wdevkaa6vaqTXtGdH9t9aHWXZkuJq)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmPinSJKFYCMuTDh484dLk5Av4HpZRzBRR1KPv7TM7CBVF)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
-#### Other web extension experiments
-- Exposing the IPFS API via [`window.ipfs`](https://docs.ipfs.io/how-to/companion-window-ipfs/) 
+#### Past web extension experiments
 - Mozilla hosted a community effort called [`libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions, with a goal of enabling dweb protocols in Firefox through browser add-ons:
   - IPFS [libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md), including a [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553)
   - The long-term goal of this project was to integrate these APIs into the WebExtensions ecosystem, but as of Q3 2020 it is not yet in Firefox Nightly
+- Exposing the IPFS API via [`window.ipfs`](https://docs.ipfs.io/how-to/companion-window-ipfs/) (experiment ended in 2020)
 - Support for [`chrome.sockets.*` APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/664) in Chromium browsers (deprioritized due to [EOL 2022](https://9to5google.com/2020/01/15/google-killing-chrome-apps/))
 
 ### IPFS and the JavaScript ecosystem
-At present, in order to run IPFS in a web browser, you must either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) HTTP API client library to connect to an external daemon running on a local or remote machine. To learn more, make sure to check the [`js-ipfs/examples`](https://github.com/ipfs/js-ipfs/tree/master/examples) and [`ipfs-http-client/examples`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client/examples) directories in their respective repos.
+At present, in order to run IPFS in a web browser, you must either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) HTTP API client library to connect to an external daemon running on a local or remote machine. 
 
-#### ... in shared worker 
-
-- Enables sharing IPFS node across browsing contexts (tabs) on same origin
-- Tracking related work in [js-ipfs#3022](https://github.com/ipfs/js-ipfs/issues/3022)
-
-#### ... in service worker
-
-- Live demo at [js.ipfs.io](https://js.ipfs.io)
-- Due to the way browser vendors maintain the service worker lifecycle, a `js-ipfs` instance should be run outside of service worker
-- Tracking related work in [in-web-browsers#55](https://github.com/ipfs/in-web-browsers/issues/55) and [ipfs-shipyard/service-worker-gateway](https://github.com/ipfs-shipyard/service-worker-gateway)
+- To learn more, make sure to check the `browser-*` examples at [`js-ipfs/examples`](https://github.com/ipfs/js-ipfs/tree/master/examples)
+  - Highlight: an advanced, end-to-end example of using js-ipfs node in `SharedWorker` from `ServiceWorker` can be found at [`ipfs/js-ipfs/examples/browser-service-worker`](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-service-worker)
 
 ### Accessing the IPFS HTTP API
 
@@ -77,45 +69,20 @@ The standalone IPFS daemon (either `go-ipfs` or `js-ipfs` in Node) exposes the A
 - Read the [DNSLink guide](https://docs.ipfs.io/concepts/dnslink/) for details, including how to set it up on your own website 
 - See details on [DNSLink in IPFS Companion](https://docs.ipfs.io/how-to/dnslink-companion/) to see additional benefits of using IPFS Companion with DNSLink support
 
-### Signed HTTP Exchanges and WebPackage
 
-[Signed HTTP Exchanges (SXG)](https://github.com/ipfs/in-web-browsers/issues/121) are an experimental spec proposed by Google to decouple the origin of the content from who distributes it. The IPFS gateway at ipfs.io participates in [Origin Trial for Signed HTTP Exchange (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges), starting with Google Chrome 71. This means [anyone can publish SXG](https://developers.google.com/web/updates/2018/11/signed-exchanges#creating_your_sxg) on IPFS, and regular Chrome can load it from the ipfs.io gateway without any additional setup on the user's side.
-
-## Q3 2020 update
+## WG status
 
 ### Now half of the Web Browsers & GUI Working Group!
 
 The IPFS core team has re-activated the **Web Browsers & GUI Working Group** as a combined team of this group and the [IPFS GUI group](https://github.com/ipfs/ipfs-gui). This larger working group operates with a focus on furthering browser adoption and integration, as well as improving the functionality and usability of our GUI-based tools as a whole, with a particular focus on benefiting the onboarding of new IPFS developers and users.
 
-### Q3 2020 OKRs (WG-wide)
-
-As with every team within IPFS, the Web Browsers & GUI Working Group sets and adheres to quarterly OKRs (Objectives and Key Results) in order to guide our work. (You can see [all of the IPFS Project's quarterly OKRs here](https://docs.google.com/spreadsheets/d/1KVe3JCsfB-l47-DE5gvk7bT0Yly_EAPrHCi-8kCthy4/edit#gid=2125992746).)
-
-1. Remote (third-party) pinning services are easy to use
-    - Generic pinning service API spec finalized
-    - `go-ipfs`/`js-ipfs`/http-client support remote pins via HTTP API
-    - User flows resulting from API are understood and implemented in IPFS Companion and IPFS Desktop/Web UI
-    - 2+ collabs implement API and are included in Desktop/Web UI's pinning service settings
-    - Desktop/Web UI is capable of importing a 4GB file on low-memory devices
-2. Maintain and improve GUI tools as a whole (as bandwidth permits in a quarter focused on Filecoin enablement)
-    - Grow IPFS usage through onboarding improvements
-    - Ship libs for sharing IPFS nodes across browsing contexts (tabs) on same origin
-    - Understand sharing an IPFS node across different origins
-    - Understand ways of leveraging IPFS Desktop when present
-3. Ongoing browser collabs and grants are supported
-    - Brave integration of embedded `go-ipfs` and native URIs
-    - Igalia’s work on `navigator.registerProtocolHandler` and browser extension APIs
-    - Kiwix is able to host ZIM on IPFS
-
 ## Get involved!
 
 ### Join a meeting
 
-We'd love to meet you in person at one of our open Web Browsers & GUI Working Group meetings. They're a great way to get quickly up to speed on our work, including latest developments and awesome demos.
+We'd love to meet you in person at one of our open Web Browsers & GUI Working Group meetings. They're a great way to get quickly up to speed on our work, including latest developments and awesome demos. 
 
-- **When:** Every other Tuesday at 16:30 UTC (check the [IPFS Calendar](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com&ctz=UTC) to see exact dates!)
-- **Where:** https://protocol.zoom.us/j/833247793
-- **Agenda**: https://hackmd.io/QaxiCU8BQqOuK8B8Tdi36g
+- Meeting details at https://github.com/ipfs/team-mgmt/issues/790
 
 You can also explore [recordings](https://www.youtube.com/playlist?list=PLuhRWgmPaHtRIXVTy_ngBwvsXvWw10mR8) and [notes](https://github.com/ipfs/team-mgmt/tree/master/meeting-notes) from past meetings any time.
 
@@ -140,7 +107,7 @@ If you're looking for endeavors related to IPFS browser integration work, these 
 
 - [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion): Harness the power of your local or `js-ipfs` node directly inside your favorite Chromium or Firefox browser, enabling support for ipfs:// addresses, automatic IPFS gateway loading of websites and file paths, easy IPFS file import and sharing, and more
 - [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui): The IPFS dashboard shipped with the IPFS daemon or IPFS Desktop
-- [js-ipfs](https://github.com/ipfs/js-ipfs): IPFS implementation in JavaScript
+- [js-ipfs](https://www.npmjs.com/package/ipfs): IPFS implementation in JavaScript
 - [HTTP API documentation](https://docs.ipfs.io/reference/http/api/): Guide to the HTTP API exposed when an IPFS node (`go-ipfs` or `js-ipfs`) is running as a daemon; allows you to control the node and run the same commands you can from the command line
-    - [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client): Client library for the IPFS HTTP API implemented in JavaScript
+    - [js-ipfs-http-client](https://www.npmjs.com/package/ipfs-http-client): Client library for the IPFS HTTP API implemented in JavaScript
 - [IPFS GUI group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - The other half of the IPFS Web Browsers & GUI Working Group, dedicated to creating and implementing standards and patterns for IPFS that are simple, accessible, reusable, and beautiful

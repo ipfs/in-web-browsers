@@ -19,6 +19,9 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
    - [Accessing the IPFS HTTP API](#accessing-the-ipfs-http-api)
    - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
    - [DNSLink](#dnslink)
+   - [Collaborations](#collaborations)
+     - [IPFS and Igalia collaborate on dweb in browsers](#ipfs-and-igalia-collaborate-on-dweb-in-browsers)
+     - [Brave](#brave)
 - [WG status](#wg-status)
 - [Get involved!](#get-involved) 
 - [Resources](#resources)
@@ -69,6 +72,39 @@ The standalone IPFS daemon (either `go-ipfs` or `js-ipfs` in Node) exposes the A
 - Read the [DNSLink guide](https://docs.ipfs.io/concepts/dnslink/) for details, including how to set it up on your own website 
 - See details on [DNSLink in IPFS Companion](https://docs.ipfs.io/how-to/dnslink-companion/) to see additional benefits of using IPFS Companion with DNSLink support
 
+### Collaborations
+
+#### IPFS and Igalia collaborate on dweb in browsers
+
+In 2020 IPFS and Igalia started a collaboration that will continue during 2021.  
+Read more: https://blog.ipfs.io/2021-01-15-ipfs-and-igalia-collaborate-on-dweb-in-browsers/  
+
+The most notable highlights at the beginning of 2021:
+
+* IPFS and [Igalia](https://www.igalia.com/) started a collaboration that will continue during 2021.
+* [Distributed web schemes have been safelisted in Chrome 86](https://www.chromestatus.com/feature/4776602869170176)’s implementation of [custom handlers](https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers) and [registered at IANA](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml).
+* Chrome 89 will allow browser extensions to register cross-origin handlers or handlers for schemes with prefix `ext+`. Refinement is pending for the [permission UI](https://bugs.chromium.org/p/chromium/issues/detail?id=1079333).
+* Firefox 84 marks `http://*.localhost/` URLs as [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts), which means websites loaded from local [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) will have access to the same Web APIs as HTTPS version.
+* Firefox 84 has improved support for [loading locally delivered mixed-resources](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content#Loading_locally_delivered_mixed-resources). Patches have also been submitted to WebKit but are pending on reviews and discussions.
+* Work is in progress to improve Chromium’s consistency and specification compliance regarding the notion of [secure contexts](https://w3c.github.io/webappsec-secure-contexts/), including removing non-standard [localhost](https://chromestatus.com/feature/5698580851458048) [names](https://chromestatus.com/feature/5668106045227008).
+* Miscellaneous other fixes have landed for the Firefox and Chromium’s implementations of custom handlers.
+
+#### Brave
+
+Brave v1.19 has integrated IPFS into their desktop web browser for Windows, macOS and Linux. When Brave detects an address which is an HTTP gateway URL to IPFS content or a native IPFS address such as `ipfs://` or `ipns://` it will prompt the user to install and enable the native IPFS node, or to use an HTTP gateway. 
+Diagnostic UI can be found at `brave://ipfs`, we suggest enabling IPFS Companion for the best experience
+
+TLDR integration status:
+
+- Initial release (v1.19) is focused on daemon orchestration and on URI support.
+- Demo: Opening `ipfs://{cid}` will trigger install prompt for go-ipfs managed by Brave itself.
+- For the best experience enable IPFS Companion and switch it to IPFS Node Type ["Provided by Brave"](https://docs.ipfs.io/how-to/companion-node-types/#provided-by-brave). 
+  When Companion is enabled all IPFS resources will be resolved by the local node.
+
+#### Opera
+
+Opera for Android 57 introduced support for resolving `ipfs://` or `ipns://` via a customizable gateway.  
+Read more: https://blog.ipfs.io/2020-03-30-ipfs-in-opera-for-android/
 
 ## WG status
 

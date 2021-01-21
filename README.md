@@ -22,6 +22,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
    - [Collaborations](#collaborations)
      - [IPFS and Igalia collaborate on dweb in browsers](#ipfs-and-igalia-collaborate-on-dweb-in-browsers)
      - [Brave](#brave)
+     - [Opera](#opera)
 - [WG status](#wg-status)
 - [Get involved!](#get-involved) 
 - [Resources](#resources)
@@ -91,12 +92,12 @@ The most notable highlights at the beginning of 2021:
 
 #### Brave
 
-Brave v1.19 has integrated IPFS into their desktop web browser for Windows, macOS and Linux. When Brave detects an address which is an HTTP gateway URL to IPFS content or a native IPFS address such as `ipfs://` or `ipns://` it will prompt the user to install and enable the native IPFS node, or to use an HTTP gateway. 
+[Brave v1.19 has integrated IPFS into their desktop web browser](https://brave.com/brave-integrates-ipfs/) for Windows, macOS and Linux. When Brave detects an address which is an HTTP gateway URL to IPFS content or a native IPFS address such as `ipfs://` or `ipns://` it will prompt the user to install and enable the native IPFS node, or to use an HTTP gateway. 
 Diagnostic UI can be found at `brave://ipfs`, we suggest enabling IPFS Companion for the best experience
 
 TLDR integration status:
 
-- Initial release (v1.19) is focused on daemon orchestration and on URI support.
+- Initial release (v1.19) is focused on daemon orchestration and on URI support (read [blogs and press](https://github.com/ipfs/in-web-browsers/issues/64#issuecomment-763016248))
 - Demo: Opening `ipfs://{cid}` will trigger install prompt for go-ipfs managed by Brave itself.
 - For the best experience enable IPFS Companion and switch it to IPFS Node Type ["Provided by Brave"](https://docs.ipfs.io/how-to/companion-node-types/#provided-by-brave). 
   When Companion is enabled all IPFS resources will be resolved by the local node.

@@ -22,8 +22,15 @@
 
 If no native protocol handler is available, redirect to path-based IPFS address at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`. 
 
-In either case, leverage IPFS path support at a subdomain gateway. This will ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)):
+In either case, leverage IPFS path support at a subdomain gateway.  
+This will ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)).
 
+Native URI can be used for addressing:
+- immutable content:  `ipfs://{cid}`
+- mutable content behind IPNS record signed with a specific libp2p key: `ipns://{libp2p-key}` 
+- mutable content behind human-readable DNSLink (DNS TXT record): `ipns://{fqdn}` 
+
+Each type of URI can be mapped to specific URL and normalization behavior happening at a subdomain gateway:
 
 | Native URI                |  HTTP Gateway                         | Internal normalization done by HTTP Gateway        |
 | ----                      | ----                                  | ----                                               |

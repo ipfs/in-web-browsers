@@ -22,20 +22,16 @@
 
 If no native protocol handler is available, redirect to path-based IPFS address at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`. 
 
-In either case, point at IPFS path first to ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)):
+In either case, leverage IPFS path support at a subdomain gateway. This will ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)):
 
-```
-Native URI            – HTTP Gateway                       (– Internal normalization done by HTTP Gateway)   
 
-ipfs://{cid}          → https://dweb.link/ipfs/{cid}        → HTTP301 → https://{dns-safe-cid}.ipfs.dweb.link
+| Native URI                |  HTTP Gateway                         | Internal normalization done by HTTP Gateway        |
+| ----                      | ----                                  | ----                                               |
+| `ipfs://{cid}`            | `https://dweb.link/ipfs/{cid}`        | HTTP301 → `https://{dns-safe-cid}.ipfs.dweb.link`  |
+| `ipns://{libp2p-key}`     | `https://dweb.link/ipns/{libp2p-key}` | HTTP301 → `https://{dns-safe-key}.ipns.dweb.link`  |
+| `ipns://{fqdn}`           | `https://dweb.link/ipns/{fqdn}`       | HTTP301 → `https://{dns-safe-fqdn}.ipns.dweb.link` |
 
-ipns://{libp2p-key}   → https://dweb.link/ipns/{libp2p-key} → HTTP301 → https://{dns-safe-cid}.ipns.dweb.link
-
-ipns://{fqdn}         → https://localhost/ipns/{fqdn}       → HTTP301 → http://{fqdn}.ipns.localhost
-ipns://{fqdn}         → https://dweb.link/ipns/{fqdn}       → HTTP301 → https://{dns-safe-fqdn}.ipns.dweb.link
-```
-
-With native protocol handlers, follow below:
+With native protocol handlers, apply below normalization:
 
 ```bash
 ipfs://{cidv1base32}
@@ -72,7 +68,7 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
 ### Paths
 
-Outside of browser context, and in cases when site isolation does not matter, a gateway can expose IPFS namespaces as regular URL paths under a single origin:
+Outside of browser context, and in cases when site isolation does not matter (see [security WARNING](https://docs.ipfs.io/how-to/address-ipfs-on-web/#path-gateway)), a gateway can expose IPFS namespaces as regular URL paths under a single origin:
 
     https://{gateway-host}/ipfs/{cid}/path/to/resource
     https://{gateway-host}/ipns/{libp2p-key-or-fqdn}/path/to/resource

@@ -183,7 +183,7 @@ A [`suborigin` header](https://w3c.github.io/webappsec-suborigins/#the-suborigin
 SHOULD be returned by HTTP gateway and contain a value
 unique to the current content addressing root.
 
-Unfortunately due to limited adoption suborigin has no practical use and is considered abandoned.
+Unfortunately due to limited adoption suborigin has no practical use and [is considered abandoned](https://github.com/ipfs/in-web-browsers/issues/66).
 
 
 ### Notes on addressing with `ipfs://`

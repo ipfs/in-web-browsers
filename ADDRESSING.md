@@ -20,31 +20,29 @@
 
 ## TL;DR
 
-If no native protocol handler is available, redirect to path-based IPFS address at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`. 
+Native URI can be used for addressing:
+- immutable content:  `ipfs://{cid}`
+- mutable content behind IPNS record signed with a specific libp2p key: `ipns://{libp2p-key}` 
+- mutable content behind human-readable DNSLink (DNS TXT record): `ipns://{fqdn}` 
 
-In either case, point at IPFS path first to ensure gateway takes care of CID normalization into a DNS-safe form:
+If no native protocol handler is available, redirect to path-based IPFS address at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`.   
 
-```
-Native URI            – HTTP Gateway                       (– Internal normalization done by HTTP Gateway)   
+In either case, leverage IPFS path support at a subdomain gateway.  This will ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)):
 
-ipfs://{cid}          → https://dweb.link/ipfs/{cid}        → HTTP301 → https://{dns-safe-cid}.ipfs.dweb.link
-ipns://{libp2p-key}   → https://dweb.link/ipns/{libp2p-key} → HTTP301 → https://{dns-safe-cid}.ipns.dweb.link
-```
+| Native URI                |  HTTP Gateway                         | Internal normalization done by HTTP Gateway        |
+| ----                      | ----                                  | ----                                               |
+| `ipfs://{cid}`            | `https://dweb.link/ipfs/{cid}`        | HTTP301 → `https://{dns-safe-cid}.ipfs.dweb.link`  |
+| `ipns://{libp2p-key}`     | `https://dweb.link/ipns/{libp2p-key}` | HTTP301 → `https://{dns-safe-key}.ipns.dweb.link`  |
+| `ipns://{fqdn}`           | `https://dweb.link/ipns/{fqdn}`       | HTTP301 → `https://{dns-safe-fqdn}.ipns.dweb.link` |
 
-When DNSLink hostname is used, redirect to subdomain only with `localhost`, use original HTTP URL otherwise:
 
-```
-ipns://{fqdn}         → https://localhost/ipns/{fqdn}       → HTTP301 → https://{fqdn}.ipns.localhost
-                      → https://{fqdn} (if no local node)
-```
-
-With native protocol handlers, follow below:
+With native protocol handlers, apply below normalization:
 
 ```bash
 ipfs://{cidv1base32}
 ipfs://{cidv0} → redirect → ipfs://{cidv1base32} # CIDv0 is case-sensitive Base58, does not work as Origin authority
 
-ipns://{libp2p-key-in-cidv1base32}
+ipns://{libp2p-key-in-cidv1base36}
 ipns://{libp2p-key-in-base58} → redirect → ipns://{libp2p-key-in-cidv1}  # Base58, does not work as Origin authority
 
 ipns://{fqdn-with-dnslink}
@@ -55,7 +53,7 @@ ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to
 
 ### Subdomains
 
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in subdomain:
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) or Base36 (for libp2p-keys) should be used in subdomain:
 
     https://{cid}.ipfs.{gateway-host}/path/to/resource
     https://{libp2p-key-cid}.ipns.{gateway-host}/path/to/resource
@@ -75,7 +73,7 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 
 ### Paths
 
-When site isolation does not matter gateway can expose IPFS namespaces as regular URL paths:
+Outside of browser context, and in cases when site isolation does not matter (see [security WARNING](https://docs.ipfs.io/how-to/address-ipfs-on-web/#path-gateway)), a gateway can expose IPFS namespaces as regular URL paths under a single origin:
 
     https://{gateway-host}/ipfs/{cid}/path/to/resource
     https://{gateway-host}/ipns/{libp2p-key-or-fqdn}/path/to/resource
@@ -190,7 +188,7 @@ A [`suborigin` header](https://w3c.github.io/webappsec-suborigins/#the-suborigin
 SHOULD be returned by HTTP gateway and contain a value
 unique to the current content addressing root.
 
-Unfortunately due to limited adoption suborigin have no practical use.
+Unfortunately due to limited adoption suborigin has no practical use and [is considered abandoned](https://github.com/ipfs/in-web-browsers/issues/66).
 
 
 ### Notes on addressing with `ipfs://`

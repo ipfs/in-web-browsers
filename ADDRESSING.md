@@ -1,7 +1,5 @@
 # IPFS Addressing in Web Browsers
 
-
-
 > ### Status of This Memo
 >
 > This living document specifies current set of conventions for the IPFS community,
@@ -11,7 +9,7 @@
 
 - [**TL;DR**](#tldr)
 - [Addressing with `http://`](#addressing-with-http-url)
-- [Addressing with `ipfs://` and `ipns://`](#addressing-with-native-url)
+- [Addressing with `ipfs://` and `ipns://`](#addressing-with-ipfs-uri)
 - [References](#references)
 - [Appendices](#appendices)
   - On [`http://`](#notes-on-addressing-with-http) 
@@ -20,16 +18,21 @@
 
 ## TL;DR
 
-Native URI can be used for addressing:
-- immutable content:  `ipfs://{cid}`
-- mutable content behind IPNS record signed with a specific libp2p key: `ipns://{libp2p-key}` 
-- mutable content behind human-readable DNSLink (DNS TXT record): `ipns://{fqdn}` 
+For immutable content use an IPFS URI (`ipfs://{cid}`).
+- [ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy](ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
 
-If no native protocol handler is available, redirect to path-based IPFS address at a gateway. The implementation should detect if a local IPFS node is available. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`.   
+For mutable content use an IPNS DNSLink URI (`ipns://{fqdn}`).
+- [ipns://webui.ipfs.io](ipns://webui.ipfs.io)
+
+For web browsers and other tools that do not yet recognise the `ipfs://` and `ipns://` schemes, additionally provide an HTTP-to-IPFS gateway URL.
+- [https://dweb.link/ipfs/bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy](https://dweb.link/ipfs/bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
+- [https://dweb.link/ipns/webui.ipfs.io](https://dweb.link/ipns/webui.ipfs.io)
+
+IPFS protocol handler implementations should opportunistically upgrade gateway urls. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`.   
 
 In either case, leverage IPFS path support at a subdomain gateway.  This will ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)):
 
-| Native URI                |  HTTP Gateway                         | Internal normalization done by HTTP Gateway        |
+| IPFS URI                  |  HTTP Gateway                         | Internal normalization done by HTTP Gateway        |
 | ----                      | ----                                  | ----                                               |
 | `ipfs://{cid}`            | `https://dweb.link/ipfs/{cid}`        | HTTP301 → `https://{dns-safe-cid}.ipfs.dweb.link`  |
 | `ipns://{libp2p-key}`     | `https://dweb.link/ipns/{libp2p-key}` | HTTP301 → `https://{dns-safe-key}.ipns.dweb.link`  |
@@ -80,13 +83,13 @@ Outside of browser context, and in cases when site isolation does not matter (se
 
 Examples:
 
-    https://gateway.ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
-    https://gateway.ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
-    https://gateway.ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
+    https://dweb.link/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+    https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
+    https://dweb.link/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 
-## Addressing with Native URL
+## Addressing with IPFS URI
 
-Where possible, subdomain convention should be replaced with native handler that provides the same origin-based guarantees:
+Where possible, subdomain convention should be replaced with a protocol handler that provides the same origin-based guarantees:
 
     ipfs://{cid}/path/to/resource
 

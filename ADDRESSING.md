@@ -21,7 +21,7 @@
 For immutable content use an IPFS URI (`ipfs://{cid}`).
 - [ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy](ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
 
-For mutable content use an IPNS DNSLink URI (`ipns://{fqdn}`).
+For mutable content use an IPNS DNSLink URI (`ipns://{dnslink}`) or a cryptographic IPNS URI (`ipns://{libp2p-key}`).
 - [`ipns://cid.ipfs.io`](ipns://cid.ipfs.io)
 - [`ipns://k51qzi5uqu5dgutdk6i1ynyzgkqngpha5xpgia3a5qqp4jsh0u4csozksxel2r`](ipns://k51qzi5uqu5dgutdk6i1ynyzgkqngpha5xpgia3a5qqp4jsh0u4csozksxel2r)
 
@@ -33,11 +33,11 @@ IPFS protocol handler implementations should opportunistically upgrade gateway u
 
 In either case, leverage IPFS path support at a subdomain gateway.  This will ensure gateway takes care of CID normalization into a DNS-safe form ([docs](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway)):
 
-| IPFS URI                  |  HTTP Gateway                         | Internal normalization done by HTTP Gateway        |
-| ----                      | ----                                  | ----                                               |
-| `ipfs://{cid}`            | `https://dweb.link/ipfs/{cid}`        | HTTP301 → `https://{dns-safe-cid}.ipfs.dweb.link`  |
-| `ipns://{libp2p-key}`     | `https://dweb.link/ipns/{libp2p-key}` | HTTP301 → `https://{dns-safe-key}.ipns.dweb.link`  |
-| `ipns://{fqdn}`           | `https://dweb.link/ipns/{fqdn}`       | HTTP301 → `https://{dns-safe-fqdn}.ipns.dweb.link` |
+| IPFS URI              | HTTP Gateway                          | Internal normalization done by HTTP Gateway           |
+| ----                  | ----                                  | ----                                                  |
+| `ipfs://{cid}`        | `https://dweb.link/ipfs/{cid}`        | HTTP301 → `https://{dns-safe-cid}.ipfs.dweb.link`     |
+| `ipns://{libp2p-key}` | `https://dweb.link/ipns/{libp2p-key}` | HTTP301 → `https://{dns-safe-key}.ipns.dweb.link`     |
+| `ipns://{dnslink}`    | `https://dweb.link/ipns/{dnslink}`    | HTTP301 → `https://{dns-safe-dnslink}.ipns.dweb.link` |
 
 
 With native protocol handlers, apply below normalization:
@@ -49,8 +49,8 @@ ipfs://{cidv0} → redirect → ipfs://{cidv1base32} # CIDv0 is case-sensitive B
 ipns://{libp2p-key-in-cidv1base36}
 ipns://{libp2p-key-in-base58} → redirect → ipns://{libp2p-key-in-cidv1}  # Base58, does not work as Origin authority
 
-ipns://{fqdn-with-dnslink}
-ipfs://{fqdn-with-dnslink} → redirect → ipns://{fqdn-with-dnslink} # just to improve UX :-)
+ipns://{dnslink}
+ipfs://{dnslink} → redirect → ipns://{dnslink} # just to improve UX :-)
 ```
 
 ## Addressing with HTTP URL
@@ -80,7 +80,7 @@ Read more: [notes on addressing with HTTP](#notes-on-addressing-with-http).
 Outside of browser context, and in cases when site isolation does not matter (see [security WARNING](https://docs.ipfs.io/how-to/address-ipfs-on-web/#path-gateway)), a gateway can expose IPFS namespaces as regular URL paths under a single origin:
 
     https://{gateway-host}/ipfs/{cid}/path/to/resource
-    https://{gateway-host}/ipns/{libp2p-key-or-fqdn}/path/to/resource
+    https://{gateway-host}/ipns/{libp2p-key-or-dnslink}/path/to/resource
 
 Examples:
 

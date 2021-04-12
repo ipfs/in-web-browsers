@@ -19,7 +19,7 @@
 ## TL;DR
 
 For immutable content use an IPFS URI (`ipfs://{cid}`).
-- [ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy](ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
+- [`ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy`](ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
 
 For mutable content use an IPNS DNSLink URI (`ipns://{dnslink}`) or a cryptographic IPNS URI (`ipns://{libp2p-key}`).
 - [`ipns://cid.ipfs.io`](ipns://cid.ipfs.io)

@@ -22,11 +22,12 @@ For immutable content use an IPFS URI (`ipfs://{cid}`).
 - [ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy](ipfs://bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
 
 For mutable content use an IPNS DNSLink URI (`ipns://{fqdn}`).
-- [ipns://webui.ipfs.io](ipns://webui.ipfs.io)
+- [`ipns://cid.ipfs.io`](ipns://cid.ipfs.io)
+- [`ipns://k51qzi5uqu5dgutdk6i1ynyzgkqngpha5xpgia3a5qqp4jsh0u4csozksxel2r`](ipns://k51qzi5uqu5dgutdk6i1ynyzgkqngpha5xpgia3a5qqp4jsh0u4csozksxel2r)
 
 For web browsers and other tools that do not yet recognise the `ipfs://` and `ipns://` schemes, additionally provide an HTTP-to-IPFS gateway URL.
 - [https://dweb.link/ipfs/bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy](https://dweb.link/ipfs/bafkreigh2akiscaildcqabsyg3dfr6chu3fgpregiymsck7e7aqa4s52zy)
-- [https://dweb.link/ipns/webui.ipfs.io](https://dweb.link/ipns/webui.ipfs.io)
+- [https://dweb.link/ipns/cid.ipfs.io](https://dweb.link/ipns/cid.ipfs.io)
 
 IPFS protocol handler implementations should opportunistically upgrade gateway urls. In web browser contexts where a local IPFS node is present, use [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) at `localhost`. If not, use public one such as `dweb.link`.   
 
@@ -85,7 +86,7 @@ Examples:
 
     https://dweb.link/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
     https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
-    https://dweb.link/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
+    https://dweb.link/ipns/tr.wikipedia-on-ipfs.org/wiki/
 
 ## Addressing with IPFS URI
 

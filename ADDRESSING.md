@@ -14,7 +14,6 @@
 - [Appendices](#appendices)
   - On [`http://`](#notes-on-addressing-with-http) 
   - On [`ipfs://`](#notes-on-addressing-with-ipfs) 
-  - Future: addressing with shared [`dweb`](#future-addressing-with-shared-dweb-namespace) namespace
 
 ## TL;DR
 
@@ -206,8 +205,11 @@ The first element after double slash is an opaque identifier representing
 the content root.  It is interpreted as an authority component used for Origin
 calculation, which provides necessary isolation between security contexts of diferent content trees.
 
-### Future: addressing with shared `dweb` namespace
+### Appendix: experiments with addressing with shared `dweb` namespace
 
-We are exploring the idea of a shared `dweb` namespace to remove the complexity of adressing IPFS and other content-addressed protocols. More details can be found at:
+We explored the idea of a shared `dweb` namespace to remove the complexity of adressing IPFS and other content-addressed protocols. More details can be found at:
 - (A) the `dweb://` protocol handler ([arewedistributedyet/issues/28](https://github.com/arewedistributedyet/arewedistributedyet/issues/28))
 - (B) the `.dweb` special-use top-level domain name ([arewedistributedyet/issues/34](https://github.com/arewedistributedyet/arewedistributedyet/issues/34))
+
+Unfortunately, a single scheme is not compatible with the security model on the web. Consider this highly experimentsl, do not use this in production.
+If anyone wants to implement it in a safe way, it needs to return a redirect to `ipfs://` or `ipns://`.

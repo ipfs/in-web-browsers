@@ -18,6 +18,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
    - [IPFS Companion browser extension](#ipfs-companion-browser-extension)
    - [IPFS and the JavaScript ecosystem](#ipfs-and-the-javascript-ecosystem)
    - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
+   - [How to run own HTTP Gateway](#how-to-run-own-http-gateway)
    - [DNSLink](#dnslink)
    - [Collaborations](#collaborations)
      - [W3C](#w3c)
@@ -60,6 +61,10 @@ At present, in order to interact with IPFS in a web browser, you must either bun
 
 - For regular users, see this [guide to how to address IPFS content paths on the web](https://docs.ipfs.io/how-to/address-ipfs-on-web/)
 - For browser vendors and user agent developers, see this [memo](ADDRESSING.md) for the current set of URL conventions for the IPFS community; we invite everyone to submit questions and suggestions for improvements via issues/PRs
+
+### How to run own HTTP Gateway
+
+Use the latest [go-ipfs daemon](https://github.com/ipfs/go-ipfs) and follow [gateway recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes).
 
 #### DNSLink
 

@@ -1,5 +1,5 @@
 # The IPFS web browsers integration group
-*Half of the IPFS Web Browsers & [GUI](https://github.com/ipfs/ipfs-gui) Working Group*
+*Informal group working on improving IPFS presence in web browsers*
 
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat)](https://protocol.ai/)
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat)](https://ipfs.io/)
@@ -17,14 +17,13 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 - [Current projects](#current-projects)
    - [IPFS Companion browser extension](#ipfs-companion-browser-extension)
    - [IPFS and the JavaScript ecosystem](#ipfs-and-the-javascript-ecosystem)
-   - [Accessing the IPFS HTTP API](#accessing-the-ipfs-http-api)
    - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
    - [DNSLink](#dnslink)
    - [Collaborations](#collaborations)
+     - [W3C](#w3c)
      - [IPFS and Igalia collaborate on dweb in browsers](#ipfs-and-igalia-collaborate-on-dweb-in-browsers)
      - [Brave](#brave)
      - [Opera](#opera)
-- [WG status](#wg-status)
 - [Get involved!](#get-involved) 
 - [Resources](#resources)
 
@@ -43,7 +42,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)<br>![](https://img.shields.io/amo/users/ipfs-companion?label=AMO%20users&style=social)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)<br>![](https://img.shields.io/chrome-web-store/users/nibjojkomfdiaoajekhjakgkdhaomnch?label=Chrome%20Web%20Store%20users&style=social)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
-#### Past web extension experiments
+#### Notable past web extension experiments
 - Mozilla hosted a community effort called [`libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions, with a goal of enabling dweb protocols in Firefox through browser add-ons:
   - IPFS [libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md), including a [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553)
   - The long-term goal of this project was to integrate these APIs into the WebExtensions ecosystem, but as of Q3 2020 it is not yet in Firefox Nightly
@@ -51,18 +50,11 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 - Support for [`chrome.sockets.*` APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/664) in Chromium browsers (deprioritized due to [EOL 2022](https://9to5google.com/2020/01/15/google-killing-chrome-apps/))
 
 ### IPFS and the JavaScript ecosystem
-At present, in order to run IPFS in a web browser, you must either bundle [`js-ipfs`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) HTTP API client library to connect to an external daemon running on a local or remote machine. 
 
-- To learn more, make sure to check the `browser-*` examples at [`js-ipfs/examples`](https://github.com/ipfs/js-ipfs/tree/master/examples)
-  - Highlight: an advanced, end-to-end example of using js-ipfs node in `SharedWorker` from `ServiceWorker` can be found at [`ipfs/js-ipfs/examples/browser-service-worker`](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-service-worker)
+At present, in order to interact with IPFS in a web browser, you must either bundle [`js-ipfs-core`](https://www.npmjs.com/package/ipfs-core) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://www.npmjs.com/package/ipfs-http-client) HTTP [RPC API](https://docs.ipfs.io/reference/http/api/) client library to connect to an external daemon running on a local or remote machine. 
 
-### Accessing the IPFS HTTP API
-
-The standalone IPFS daemon (either `go-ipfs` or `js-ipfs` in Node) exposes the API at `/api/v0/`. It is an RPC-style API over HTTP POST.
-
-- [API reference](https://docs.ipfs.io/reference/http/api/)
-- [Client libraries in various languages](https://github.com/ipfs/ipfs#http-client-libraries)
-
+- To learn more, make sure to check the `browser-*` examples at [`ipfs-examples/js-ipfs-examples`](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples)
+  - Highlight: an advanced, end-to-end example of using js-ipfs node in `SharedWorker` from `ServiceWorker` can be found at [`js-ipfs-examples/browser-service-worker`](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-service-worker)
 
 ### How to address IPFS on the web
 

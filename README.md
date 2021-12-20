@@ -2,8 +2,9 @@
 *Half of the IPFS Web Browsers & [GUI](https://github.com/ipfs/ipfs-gui) Working Group*
 
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat)](https://protocol.ai/)
-[![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat)](http://ipfs.io/)
-[![#ipfs](https://img.shields.io/badge/irc-%23ipfs-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs) [![#ipfs-in-web-browsers](https://img.shields.io/badge/irc-%23ipfs--in--web--browsers-brightgreen.svg)](https://webchat.freenode.net/?channels=ipfs-in-web-browsers)
+[![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat)](https://ipfs.io/)
+[![](https://img.shields.io/badge/matrix%20chat-%23lobby:ipfs.io-blue.svg?style=flat-square)](https://matrix.to/#/#lobby:ipfs.io)
+[![](https://img.shields.io/badge/forums-discuss.ipfs.io-blue.svg?style=flat-square)](https://discuss.ipfs.io)
 
 Our goal is to **facilitate native support for IPFS and other decentralized protocols in web browsers in order to benefit ...**. 
 
@@ -36,9 +37,11 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 <img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave. Check out all of [IPFS Companion's features](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion-features) and [**install it**](https://github.com/ipfs-shipyard/ipfs-companion#install) today!
 
 
-| <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16"> [Firefox](https://www.mozilla.org/firefox/new/) / [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox) | <img src="https://unpkg.com/@browser-logos/chrome@1.0.4/chrome_16x16.png" width="16" height="16"> [Chrome](https://www.google.com/chrome/) / <img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16"> [Brave](https://brave.com/)
+
+
+| <img src="https://unpkg.com/@browser-logos/firefox/firefox_16x16.png" width="16" height="16"> [Firefox](https://www.mozilla.org/firefox/new/) \| [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox) | <img src="https://unpkg.com/@browser-logos/chrome/chrome_16x16.png" width="16" height="16"> [Chrome](https://www.google.com/chrome/) \| <img src="https://unpkg.com/@browser-logos/brave/brave_16x16.png" width="16" height="16"> [Brave](https://brave.com/) \| <img src="https://unpkg.com/@browser-logos/opera/opera_16x16.png" width="16" height="16"> [Opera](https://www.opera.com/)  \| <img src="https://unpkg.com/@browser-logos/edge/edge_16x16.png" width="16" height="16"> [Edge](https://www.microsoftedgeinsider.com/)
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![Install From AMO](https://ipfs.io/ipfs/QmSX44XockQifmxE8Wdevkaa6vaqTXtGdH9t9aHWXZkuJq)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmPinSJKFYCMuTDh484dLk5Av4HpZRzBRR1KPv7TM7CBVF)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
+| [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)<br>![](https://img.shields.io/amo/users/ipfs-companion?label=AMO%20users&style=social)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)<br>![](https://img.shields.io/chrome-web-store/users/nibjojkomfdiaoajekhjakgkdhaomnch?label=Chrome%20Web%20Store%20users&style=social)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
 #### Past web extension experiments
 - Mozilla hosted a community effort called [`libdweb`](https://github.com/mozilla/libdweb/) to implement experimental APIs for Firefox WebExtensions, with a goal of enabling dweb protocols in Firefox through browser add-ons:
@@ -68,19 +71,24 @@ The standalone IPFS daemon (either `go-ipfs` or `js-ipfs` in Node) exposes the A
 
 #### DNSLink
 
-[DNSLink](https://dnslink.io) enables you to map a domain name to an IPFS address by means of a DNS TXT record. 
+[DNSLink](https://dnslink.dev) enables you to map a domain name to an IPFS address (CID or IPNS libp2p-key) by means of a DNS TXT record. 
 
 - Read the [DNSLink guide](https://docs.ipfs.io/concepts/dnslink/) for details, including how to set it up on your own website 
 - See details on [DNSLink in IPFS Companion](https://docs.ipfs.io/how-to/dnslink-companion/) to see additional benefits of using IPFS Companion with DNSLink support
 
 ### Collaborations
 
+#### W3C
+
+Protocol Labs is a [W3C Member](https://www.w3.org/Consortium/Member/List). 
+Current focus is to watch, learn, and participate in [WebExtensions Community Group](https://www.w3.org/community/webextensions/).
+
 #### IPFS and Igalia collaborate on dweb in browsers
 
-In 2020 IPFS and Igalia started a collaboration that will continue during 2021.  
+In 2020 IPFS and Igalia started a collaboration that continues to this day. 
 Read more: https://blog.ipfs.io/2021-01-15-ipfs-and-igalia-collaborate-on-dweb-in-browsers/  
 
-The most notable highlights at the beginning of 2021:
+The most notable highlights:
 
 * IPFS and [Igalia](https://www.igalia.com/) started a collaboration that will continue during 2021.
 * [Distributed web schemes have been safelisted in Chrome 86](https://www.chromestatus.com/feature/4776602869170176)’s implementation of [custom handlers](https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers) and [registered at IANA](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml).
@@ -89,6 +97,8 @@ The most notable highlights at the beginning of 2021:
 * Firefox 84 has improved support for [loading locally delivered mixed-resources](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content#Loading_locally_delivered_mixed-resources). Patches have also been submitted to WebKit but are pending on reviews and discussions.
 * Work is in progress to improve Chromium’s consistency and specification compliance regarding the notion of [secure contexts](https://w3c.github.io/webappsec-secure-contexts/), including removing non-standard [localhost](https://chromestatus.com/feature/5698580851458048) [names](https://chromestatus.com/feature/5668106045227008).
 * Miscellaneous other fixes have landed for the Firefox and Chromium’s implementations of custom handlers.
+* WIP refactor to make it easier to register custom protocol handlers ([example](https://chromium-review.googlesource.com/c/chromium/src/+/2992306), related talk: [Integrating New Protocol Handlers into Chrome [BlinkOn 15]](https://www.youtube.com/watch?v=kHIN6FkLAS8))
+
 
 #### Brave
 
@@ -107,13 +117,9 @@ TLDR integration status:
 Opera for Android 57 introduced support for resolving `ipfs://` or `ipns://` via a customizable gateway.  
 Read more: https://blog.ipfs.io/2020-03-30-ipfs-in-opera-for-android/
 
-## WG status
-
-### Now half of the Web Browsers & GUI Working Group!
-
-The IPFS core team has re-activated the **Web Browsers & GUI Working Group** as a combined team of this group and the [IPFS GUI group](https://github.com/ipfs/ipfs-gui). This larger working group operates with a focus on furthering browser adoption and integration, as well as improving the functionality and usability of our GUI-based tools as a whole, with a particular focus on benefiting the onboarding of new IPFS developers and users.
-
 ## Get involved!
+
+<!-- TODO: well, maybe we can bring this back one day...
 
 ### Join a meeting
 
@@ -122,6 +128,8 @@ We'd love to meet you in person at one of our open Web Browsers & GUI Working Gr
 - Meeting details at https://github.com/ipfs/team-mgmt/issues/790
 
 You can also explore [recordings](https://www.youtube.com/playlist?list=PLuhRWgmPaHtRIXVTy_ngBwvsXvWw10mR8) and [notes](https://github.com/ipfs/team-mgmt/tree/master/meeting-notes) from past meetings any time.
+
+-->
 
 ### Contribute to an issue
 
@@ -134,17 +142,30 @@ If you see an issue that catches your eye, leave a comment so we know you're int
 
 We're an open project and a friendly group, so please be nice and **read the [contributing guidelines](https://github.com/ipfs/community/blob/master/CONTRIBUTING_JS.md)** when you're ready to jump in.
 
-### Discuss in GitHub or IRC
+### Discuss
 
-We do hang out on IRC — see the [#ipfs](https://www.irccloud.com/invite?channel=%23ipfs&amp;hostname=irc.freenode.net&amp;port=6697&amp;ssl=1") and [#ipfs-in-web-browsers](https://www.irccloud.com/invite?channel=%23ipfs-in-web-browsers&amp;hostname=irc.freenode.net&amp;port=6697&amp;ssl=1") channels on irc.freenode.net — but for the sake of async communication, archiving, and searchability, we encourage discussions to happen in the context of GitHub issue comments whenever practical.
+For the sake of async communication, archiving, and searchability, we encourage browser-related technical discussions to happen in the context of GitHub issue comments whenever practical.
+
+If you want to ask support question, or just chat informally to learn and brainstorm, feel free to join chat community in [#lobby:ipfs.io](https://matrix.to/#/#lobby:ipfs.io) or discussion forum at https://discuss.ipfs.io 
+
+
+### Improve docs
+
+https://docs.ipfs.io is backed by the repo at https://github.com/ipfs/ipfs-docs – any help in improving docs related to browsers (or not) is appreciated!
+
+
+### Improve specs
+
+Proof-read [ipfs/specs](https://github.com/ipfs/specs/)  and fill an issue for: (1) outdated specs (2) missing specs (3) bits that are confusing and need to be clarified.
 
 ## Resources
 
 If you're looking for endeavors related to IPFS browser integration work, these resources may be helpful.
 
-- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion): Harness the power of your local or `js-ipfs` node directly inside your favorite Chromium or Firefox browser, enabling support for ipfs:// addresses, automatic IPFS gateway loading of websites and file paths, easy IPFS file import and sharing, and more
+- [IPFS in Brave Browser](https://brave.com/ipfs-support/): TLDR explanation how Brave supports IPFS out of the box (either as local node, or by delegating to a public gateway of user's choice)
+- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion): Harness the power of your local IPFS daemon directly inside your favorite Chromium or Firefox browser, enabling support for ipfs:// addresses, automatic IPFS gateway loading of websites and file paths, easy IPFS file import and sharing, and more
 - [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui): The IPFS dashboard shipped with the IPFS daemon or IPFS Desktop
-- [js-ipfs](https://www.npmjs.com/package/ipfs): IPFS implementation in JavaScript
+- [js-ipfs-core](https://www.npmjs.com/package/ipfs-core): Core IPFS implementation in JavaScript for use in browser (without Nodejs daemon parts)
 - [HTTP API documentation](https://docs.ipfs.io/reference/http/api/): Guide to the HTTP API exposed when an IPFS node (`go-ipfs` or `js-ipfs`) is running as a daemon; allows you to control the node and run the same commands you can from the command line
     - [js-ipfs-http-client](https://www.npmjs.com/package/ipfs-http-client): Client library for the IPFS HTTP API implemented in JavaScript
 - [IPFS GUI group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - The other half of the IPFS Web Browsers & GUI Working Group, dedicated to creating and implementing standards and patterns for IPFS that are simple, accessible, reusable, and beautiful

@@ -85,7 +85,7 @@ Current focus is to watch, learn, and participate in [WebExtensions Community Gr
 In 2020 IPFS and Igalia started a collaboration that continues to this day. 
 Read more: https://blog.ipfs.io/2021-01-15-ipfs-and-igalia-collaborate-on-dweb-in-browsers/  
 
-The most notable highlights:
+The most notable highlights (chronological order):
 
 * IPFS and [Igalia](https://www.igalia.com/) started a collaboration that will continue beyond 2021+
 * [Distributed web schemes have been safelisted in Chrome 86](https://www.chromestatus.com/feature/4776602869170176)’s implementation of [custom handlers](https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers) and [registered at IANA](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml).
@@ -95,7 +95,8 @@ The most notable highlights:
 * Work is in progress to improve Chromium’s consistency and specification compliance regarding the notion of [secure contexts](https://w3c.github.io/webappsec-secure-contexts/), including removing non-standard [localhost](https://chromestatus.com/feature/5698580851458048) [names](https://chromestatus.com/feature/5668106045227008).
 * Miscellaneous other fixes have landed for the Firefox and Chromium’s implementations of custom handlers.
 * WIP refactor to make it easier to register custom protocol handlers ([example](https://chromium-review.googlesource.com/c/chromium/src/+/2992306), related talk: [Integrating New Protocol Handlers into Chrome [BlinkOn 15]](https://www.youtube.com/watch?v=kHIN6FkLAS8))
-* Work is in progress to [add IPFS and IPNS as safelisted schemes for `registerProtocolHandler()`](https://github.com/whatwg/html/pull/7911)
+* 2022-05-10: HTML spec PR: [add IPFS and IPNS as safelisted schemes for `registerProtocolHandler()`](https://github.com/whatwg/html/pull/7911)
+* 2022-05-18: Chromium status update: [New Custom Handlers Component (BlinkOn 16)](https://youtu.be/o1pJJuQiCmQ?t=2771)
 
 
 #### Brave

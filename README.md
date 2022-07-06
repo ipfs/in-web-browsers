@@ -102,6 +102,7 @@ The most notable highlights (chronological order):
 * WIP refactor to make it easier to register custom protocol handlers ([example](https://chromium-review.googlesource.com/c/chromium/src/+/2992306), related talk: [Integrating New Protocol Handlers into Chrome [BlinkOn 15]](https://www.youtube.com/watch?v=kHIN6FkLAS8))
 * 2022-05-10: HTML spec PR: [add IPFS and IPNS as safelisted schemes for `registerProtocolHandler()`](https://github.com/whatwg/html/pull/7911)
 * 2022-05-18: Chromium status update: [New Custom Handlers Component (BlinkOn 16)](https://youtu.be/o1pJJuQiCmQ?t=2771)
+* 2022-06-28: [Explainer: Predefined Custom Handlers](https://github.com/Igalia/explainers/tree/main/custom-protocol-handlers/PredefinedHandlers) + [Chromium discussion thread](https://groups.google.com/a/chromium.org/g/content-owners/c/KIFf1EdM-4c/m/7tGJmPiaAAAJ)
 
 
 #### Brave

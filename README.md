@@ -176,6 +176,6 @@ If you're looking for endeavors related to IPFS browser integration work, these 
 - [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui): The IPFS dashboard shipped with the IPFS daemon or IPFS Desktop
 - [js-ipfs-core](https://www.npmjs.com/package/ipfs-core): Core IPFS implementation in JavaScript for use in browser (without Nodejs daemon parts)
 - [HTTP Gateway API docs](https://docs.ipfs.tech/reference/http/gateway/) - implementation-agnostic interface for trusted and trustless data retrieval
-- [HTTP RPC API docs](https://docs.ipfs.tech/reference/kubo/rpci/): Guide to the RPC over HTTP API exposed when a Kubo IPFS node (go-ipfs) is running as a daemon; allows you to control the node and run the same commands you can from the command line
+- [HTTP RPC API docs](https://docs.ipfs.tech/reference/kubo/rpc/): Guide to the RPC over HTTP API exposed when a Kubo IPFS node (go-ipfs) is running as a daemon; allows you to control the node and run the same commands you can from the command line
   - For up-to-date info about which JS client to use, see https://github.com/ipfs/kubo/issues/9125
 - [IPFS GUI group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - The other half of the IPFS Web Browsers & GUI Working Group, dedicated to creating and implementing standards and patterns for IPFS that are simple, accessible, reusable, and beautiful

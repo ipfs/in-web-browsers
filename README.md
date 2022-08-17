@@ -103,6 +103,8 @@ The most notable highlights (chronological order):
 * 2022-05-10: HTML spec PR: [add IPFS and IPNS as safelisted schemes for `registerProtocolHandler()`](https://github.com/whatwg/html/pull/7911)
 * 2022-05-18: Chromium status update: [New Custom Handlers Component (BlinkOn 16)](https://youtu.be/o1pJJuQiCmQ?t=2771)
 * 2022-06-28: [Explainer: Predefined Custom Handlers](https://github.com/Igalia/explainers/tree/main/custom-protocol-handlers/PredefinedHandlers) + [Chromium discussion thread](https://groups.google.com/a/chromium.org/g/content-owners/c/KIFf1EdM-4c/m/7tGJmPiaAAAJ)
+* 2022-07-20: Chromium SchemeRegistry patch MERGED: [New list in SchemeRegistry to manage schemes with predefined handlers](https://chromium-review.googlesource.com/c/chromium/src/+/3652049/) 
+* 2022-08-03: After refactors, adding predefined, redirect-based handlers is 2 LOC – demo [Implement Predefined Handlers for IPFS schemes using the SchemeRegistry](https://chromium-review.googlesource.com/c/chromium/src/+/3650554)
 
 
 #### Brave

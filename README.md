@@ -2,9 +2,9 @@
 *Informal group working on improving IPFS presence in web browsers*
 
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat)](https://protocol.ai/)
-[![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat)](https://ipfs.io/)
+[![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat)](https://ipfs.tech/)
 [![](https://img.shields.io/badge/matrix%20chat-%23lobby:ipfs.io-blue.svg?style=flat-square)](https://matrix.to/#/#lobby:ipfs.io)
-[![](https://img.shields.io/badge/forums-discuss.ipfs.io-blue.svg?style=flat-square)](https://discuss.ipfs.io)
+[![](https://img.shields.io/badge/forums-discuss.ipfs.io-blue.svg?style=flat-square)](https://discuss.ipfs.tech)
 
 Our goal is to **facilitate native support for IPFS and other decentralized protocols in web browsers in order to benefit ...**. 
 
@@ -33,9 +33,9 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 
 ### IPFS Companion browser extension
 
-[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol. It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox (desktop and Android) and Chromium-based browsers including
+[IPFS Companion](https://github.com/ipfs/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol. It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox (desktop and Android) and Chromium-based browsers including
 <img src="https://unpkg.com/@browser-logos/chrome@1.0.4/chrome_16x16.png" width="16" height="16">Chrome or
-<img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave. Check out all of [IPFS Companion's features](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion-features) and [**install it**](https://github.com/ipfs-shipyard/ipfs-companion#install) today!
+<img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave. Check out all of [IPFS Companion's features](https://github.com/ipfs/ipfs-companion#ipfs-companion-features) and [**install it**](https://github.com/ipfs/ipfs-companion#install) today!
 
 
 
@@ -49,7 +49,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
   - IPFS [libdweb experiments](https://github.com/ipfs-shipyard/ipfs-companion/blob/libdweb/docs/libdweb.md), including a [native protocol handler](https://github.com/ipfs-shipyard/ipfs-companion/pull/533), [local DNS-SD discovery and TCP transport](https://github.com/ipfs-shipyard/ipfs-companion/pull/553)
   - The long-term goal of this project was to integrate these APIs into the WebExtensions ecosystem, but as of Q3 2020 it is not yet in Firefox Nightly
 - Exposing the IPFS API via [`window.ipfs`](https://docs.ipfs.io/how-to/companion-window-ipfs/) (experiment ended in 2020)
-- Support for [`chrome.sockets.*` APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/664) in Chromium browsers (deprioritized due to [EOL 2022](https://9to5google.com/2020/01/15/google-killing-chrome-apps/))
+- Support for [`chrome.sockets.*` APIs](https://github.com/ipfs-shipyard/ipfs-companion/issues/664) in Chromium browsers (ended due to [EOL 2022](https://9to5google.com/2020/01/15/google-killing-chrome-apps/))
 
 ### IPFS and the JavaScript ecosystem
 
@@ -60,12 +60,14 @@ At present, in order to interact with IPFS in a web browser, you must either bun
 
 ### How to address IPFS on the web
 
-- For regular users, see this [guide to how to address IPFS content paths on the web](https://docs.ipfs.io/how-to/address-ipfs-on-web/)
+- For regular users, see
+  - this [guide to how to address IPFS content paths on the web](https://docs.ipfs.io/how-to/address-ipfs-on-web/)
+  - this [reference about HTTP Gateway API](https://docs.ipfs.tech/reference/http/gateway/)
 - For browser vendors and user agent developers, see this [memo](ADDRESSING.md) for the current set of URL conventions for the IPFS community; we invite everyone to submit questions and suggestions for improvements via issues/PRs
 
 ### How to run own HTTP Gateway
 
-Use the latest [go-ipfs daemon](https://github.com/ipfs/go-ipfs) and follow [gateway recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes).
+Use the latest [Kubo daemon](https://github.com/ipfs/kubo) and follow [gateway recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
 
 ### How to implement HTTP Gateway
 
@@ -75,8 +77,8 @@ See specification and implementer notes at [ipfs/specs/http-gateways](https://gi
 
 [DNSLink](https://dnslink.dev) enables you to map a domain name to an IPFS address (CID or IPNS libp2p-key) by means of a DNS TXT record. 
 
-- Read the [DNSLink guide](https://docs.ipfs.io/concepts/dnslink/) for details, including how to set it up on your own website 
-- See details on [DNSLink in IPFS Companion](https://docs.ipfs.io/how-to/dnslink-companion/) to see additional benefits of using IPFS Companion with DNSLink support
+- Read the [DNSLink guide](https://docs.ipfs.tech/concepts/dnslink/) for details, including how to set it up on your own website 
+- See details on [DNSLink in IPFS Companion](https://docs.ipfs.tech/how-to/dnslink-companion/) to see additional benefits of using IPFS Companion with DNSLink support
 
 ### Collaborations
 
@@ -88,14 +90,14 @@ Current focus is to watch, learn, and participate in [WebExtensions Community Gr
 #### IPFS and Igalia collaborate on dweb in browsers
 
 In 2020 IPFS and Igalia started a collaboration that continues to this day. 
-Read more: https://blog.ipfs.io/2021-01-15-ipfs-and-igalia-collaborate-on-dweb-in-browsers/  
+Read more: https://blog.ipfs.tech/2021-01-15-ipfs-and-igalia-collaborate-on-dweb-in-browsers/  
 
 The most notable highlights (chronological order):
 
 * IPFS and [Igalia](https://www.igalia.com/) started a collaboration that will continue beyond 2021+
 * [Distributed web schemes have been safelisted in Chrome 86](https://www.chromestatus.com/feature/4776602869170176)’s implementation of [custom handlers](https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers) and [registered at IANA](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml).
 * Chrome 89 will allow browser extensions to register cross-origin handlers or handlers for schemes with prefix `ext+`. Refinement is pending for the [permission UI](https://bugs.chromium.org/p/chromium/issues/detail?id=1079333).
-* Firefox 84 marks `http://*.localhost/` URLs as [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts), which means websites loaded from local [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) will have access to the same Web APIs as HTTPS version.
+* Firefox 84 marks `http://*.localhost/` URLs as [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts), which means websites loaded from local [subdomain gateway](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) will have access to the same Web APIs as HTTPS version.
 * Firefox 84 has improved support for [loading locally delivered mixed-resources](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content#Loading_locally_delivered_mixed-resources). Patches have also been submitted to WebKit but are pending on reviews and discussions.
 * Work is in progress to improve Chromium’s consistency and specification compliance regarding the notion of [secure contexts](https://w3c.github.io/webappsec-secure-contexts/), including removing non-standard [localhost](https://chromestatus.com/feature/5698580851458048) [names](https://chromestatus.com/feature/5668106045227008).
 * Miscellaneous other fixes have landed for the Firefox and Chromium’s implementations of custom handlers.
@@ -116,13 +118,13 @@ TLDR integration status:
 
 - Initial release (v1.19) is focused on daemon orchestration and on URI support (read [blogs and press](https://github.com/ipfs/in-web-browsers/issues/64#issuecomment-763016248))
 - Demo: Opening `ipfs://{cid}` will trigger install prompt for go-ipfs managed by Brave itself.
-- For the best experience enable IPFS Companion and switch it to IPFS Node Type ["Provided by Brave"](https://docs.ipfs.io/how-to/companion-node-types/#provided-by-brave). 
+- For the best experience enable IPFS Companion and switch it to IPFS Node Type ["Provided by Brave"](https://docs.ipfs.tech/how-to/companion-node-types/#provided-by-brave). 
   When Companion is enabled all IPFS resources will be resolved by the local node.
 
 #### Opera
 
 Opera for Android 57 introduced support for resolving `ipfs://` or `ipns://` via a customizable gateway.  
-Read more: https://blog.ipfs.io/2020-03-30-ipfs-in-opera-for-android/
+Read more: https://blog.ipfs.tech/2020-03-30-ipfs-in-opera-for-android/
 
 ## Get involved!
 
@@ -173,6 +175,7 @@ If you're looking for endeavors related to IPFS browser integration work, these 
 - [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion): Harness the power of your local IPFS daemon directly inside your favorite Chromium or Firefox browser, enabling support for ipfs:// addresses, automatic IPFS gateway loading of websites and file paths, easy IPFS file import and sharing, and more
 - [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui): The IPFS dashboard shipped with the IPFS daemon or IPFS Desktop
 - [js-ipfs-core](https://www.npmjs.com/package/ipfs-core): Core IPFS implementation in JavaScript for use in browser (without Nodejs daemon parts)
-- [HTTP API documentation](https://docs.ipfs.io/reference/http/api/): Guide to the HTTP API exposed when an IPFS node (`go-ipfs` or `js-ipfs`) is running as a daemon; allows you to control the node and run the same commands you can from the command line
-    - [js-ipfs-http-client](https://www.npmjs.com/package/ipfs-http-client): Client library for the IPFS HTTP API implemented in JavaScript
+- [HTTP Gateway API docs](https://docs.ipfs.tech/reference/http/gateway/) - implementation-agnostic interface for trusted and trustless data retrieval
+- [HTTP RPC API docs](https://docs.ipfs.tech/reference/kubo/rpci/): Guide to the RPC over HTTP API exposed when a Kubo IPFS node (go-ipfs) is running as a daemon; allows you to control the node and run the same commands you can from the command line
+  - For up-to-date info about which JS client to use, see https://github.com/ipfs/kubo/issues/9125
 - [IPFS GUI group](https://github.com/ipfs-shipyard/pm-ipfs-gui) - The other half of the IPFS Web Browsers & GUI Working Group, dedicated to creating and implementing standards and patterns for IPFS that are simple, accessible, reusable, and beautiful

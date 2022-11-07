@@ -107,7 +107,8 @@ The most notable highlights (chronological order):
 * 2022-06-28: [Explainer: Predefined Custom Handlers](https://github.com/Igalia/explainers/tree/main/custom-protocol-handlers/PredefinedHandlers) + [Chromium discussion thread](https://groups.google.com/a/chromium.org/g/content-owners/c/KIFf1EdM-4c/m/7tGJmPiaAAAJ)
 * 2022-07-20: Chromium SchemeRegistry patch MERGED: [New list in SchemeRegistry to manage schemes with predefined handlers](https://chromium-review.googlesource.com/c/chromium/src/+/3652049/) 
 * 2022-08-03: After refactors, adding predefined, redirect-based handlers is 2 LOC – demo [Implement Predefined Handlers for IPFS schemes using the SchemeRegistry](https://chromium-review.googlesource.com/c/chromium/src/+/3650554)
-* 2022-08-1: Blogpost: [New Custom Handlers component for Chrome](https://blogs.igalia.com/jfernandez/2022/08/10/new-custom-handlers-component-for-chrome/)
+* 2022-08-01: Blogpost: [New Custom Handlers component for Chrome](https://blogs.igalia.com/jfernandez/2022/08/10/new-custom-handlers-component-for-chrome/)
+* 2022-09-28: [Intent to Prototype: Curve25519 in Web Cryptography](https://groups.google.com/a/chromium.org/g/blink-dev/c/n0uKIqfypW0/m/xu5UBbaBAwAJ)
 
 #### Brave
 

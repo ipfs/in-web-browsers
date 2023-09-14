@@ -25,6 +25,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
      - [W3C](#w3c)
      - [IPFS and Igalia collaborate on dweb in browsers](#ipfs-and-igalia-collaborate-on-dweb-in-browsers)
      - [Brave](#brave)
+     - [IPFS in Chromium](#ipfs-chromium)
      - [Opera](#opera)
 - [Get involved!](#get-involved) 
 - [Resources](#resources)
@@ -87,6 +88,8 @@ See specification and implementer notes at [ipfs/specs/http-gateways](https://gi
 Protocol Labs is a [W3C Member](https://www.w3.org/Consortium/Member/List). 
 Current focus is to watch, learn, and participate in [WebExtensions Community Group](https://www.w3.org/community/webextensions/).
 
+- 2023-Q3: [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212) mentioned during [WECG TPAC 2023 (notes)](https://github.com/w3c/webextensions/blob/main/_minutes/2023-09-11-wecg-tpac.md)
+
 #### IPFS and Igalia collaborate on dweb in browsers
 
 In 2020 IPFS and Igalia started a collaboration that continues to this day. 
@@ -109,6 +112,7 @@ The most notable highlights (chronological order):
 * 2022-08-03: After refactors, adding predefined, redirect-based handlers is 2 LOC – demo [Implement Predefined Handlers for IPFS schemes using the SchemeRegistry](https://chromium-review.googlesource.com/c/chromium/src/+/3650554)
 * 2022-08-01: Blogpost: [New Custom Handlers component for Chrome](https://blogs.igalia.com/jfernandez/2022/08/10/new-custom-handlers-component-for-chrome/)
 * 2022-09-28: [Intent to Prototype: Curve25519 in Web Cryptography](https://groups.google.com/a/chromium.org/g/blink-dev/c/n0uKIqfypW0/m/xu5UBbaBAwAJ)
+* 2023-Q3: Kick-off work with Igalia on prototyping [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212)
 
 #### Brave
 
@@ -121,6 +125,11 @@ TLDR integration status:
 - Demo: Opening `ipfs://{cid}` will trigger install prompt for go-ipfs managed by Brave itself.
 - For the best experience enable IPFS Companion and switch it to IPFS Node Type ["Provided by Brave"](https://docs.ipfs.tech/how-to/companion-node-types/#provided-by-brave). 
   When Companion is enabled all IPFS resources will be resolved by the local node.
+
+#### ipfs-chromium
+
+* 2023-Q3: Project introduction blogpost at [IPFS Multi-Gateway Experiment in Chromium](https://blog.ipfs.tech/2023-05-multigateway-chromium-client/)
+* 2023-Q3: [ipfs-chromium](https://github.com/little-bear-labs/ipfs-chromium) project ships first builds
 
 #### Opera
 

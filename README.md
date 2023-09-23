@@ -130,6 +130,7 @@ TLDR integration status:
 
 * 2023-Q3: Project introduction blogpost at [IPFS Multi-Gateway Experiment in Chromium](https://blog.ipfs.tech/2023-05-multigateway-chromium-client/)
 * 2023-Q3: [ipfs-chromium](https://github.com/little-bear-labs/ipfs-chromium) project ships first builds
+* 2023-08-30: [Intent to Experiment: Verifying IPFS client via HTTP APIs](https://chromestatus.com/feature/5105580464668672)
 
 #### Opera
 

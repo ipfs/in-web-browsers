@@ -17,6 +17,7 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 - [Current projects](#current-projects)
    - [IPFS Companion browser extension](#ipfs-companion-browser-extension)
    - [IPFS and the JavaScript ecosystem](#ipfs-and-the-javascript-ecosystem)
+      - [Helia](#helia)
    - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
    - [How to run own HTTP Gateway](#how-to-run-own-http-gateway)
    - [How to implement HTTP Gateway](#how-to-implement-http-gateway)
@@ -54,10 +55,20 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 
 ### IPFS and the JavaScript ecosystem
 
-At present, in order to interact with IPFS in a web browser, you must either bundle [`js-ipfs-core`](https://www.npmjs.com/package/ipfs-core) (a full IPFS node in JavaScript) with your client-side application, or use the [`js-ipfs-http-client`](https://www.npmjs.com/package/ipfs-http-client) HTTP [RPC API](https://docs.ipfs.io/reference/http/api/) client library to connect to an external daemon running on a local or remote machine. 
+#### Helia 
 
-- To learn more, make sure to check the `browser-*` examples at [`ipfs-examples/js-ipfs-examples`](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples)
-  - Highlight: an advanced, end-to-end example of using js-ipfs node in `SharedWorker` from `ServiceWorker` can be found at [`js-ipfs-examples/browser-service-worker`](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-service-worker)
+[Helia](https://github.com/ipfs/helia) is a lean, modular, and modern TypeScript implementation of IPFS for the prolific JS and browser environments.
+
+See the [Manifesto](https://github.com/ipfs/helia/wiki/Manifesto), the [FAQ](https://github.com/ipfs/helia/wiki/FAQ), and the [State of IPFS in JS blog post from October 2022](https://blog.ipfs.tech/state-of-ipfs-in-js/) for more info.
+
+Usage examples:
+- [examples at `ipfs/helia`](https://github.com/ipfs/helia?tab=readme-ov-file#-usage)
+- an advanced, end-to-end example of using [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch) node in `ServiceWorker` can be found at <https://inbrowser.link> ([sources](https://github.com/ipfs/service-worker-gateway/))
+
+#### Legacy JS-IPFS
+
+The `js-ipfs` / `ipfs-core` is is no longer maintained.
+See [State of IPFS in JS blog post from October 2022](https://blog.ipfs.tech/state-of-ipfs-in-js/) for rationale.
 
 ### How to address IPFS on the web
 
@@ -68,11 +79,14 @@ At present, in order to interact with IPFS in a web browser, you must either bun
 
 ### How to run own HTTP Gateway
 
-Use the latest [Kubo daemon](https://github.com/ipfs/kubo) and follow [gateway recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
+- If you are a desktop user, try [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/)
+- If you only want to run a Gateway as a public HTTP server, and the data is provided by separate IPFS nodes, use the latest [Rainbow](https://github.com/ipfs/rainbow/), which is a specialized gateway daemon.
+- If you want to host your own data and prefer to work with command-line, use the latest [Kubo daemon](https://github.com/ipfs/kubo) and follow [gateway recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
+- If you have a lot of data, consider running Kubo with [IPFS Cluster](https://ipfscluster.io/).
 
 ### How to implement HTTP Gateway
 
-See specification and implementer notes at [ipfs/specs/http-gateways](https://github.com/ipfs/specs/blob/main/http-gateways/README.md).
+See specification and implementer notes at <https://specs.ipfs.tech/http-gateways/>.
 
 #### DNSLink
 
@@ -113,18 +127,15 @@ The most notable highlights (chronological order):
 * 2022-08-01: Blogpost: [New Custom Handlers component for Chrome](https://blogs.igalia.com/jfernandez/2022/08/10/new-custom-handlers-component-for-chrome/)
 * 2022-09-28: [Intent to Prototype: Curve25519 in Web Cryptography](https://groups.google.com/a/chromium.org/g/blink-dev/c/n0uKIqfypW0/m/xu5UBbaBAwAJ)
 * 2023-Q3: Kick-off work with Igalia on prototyping [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212)
+* 2024-Q3: Curve25519 in Web APIs is implemented in Chromium and WebKit behind a runtime flag [#](https://github.com/ipfs/in-web-browsers/issues/204#issuecomment-1735833247), remaining work is around WPT and specification details.
 
 #### Brave
 
-[Brave v1.19 has integrated IPFS into their desktop web browser](https://brave.com/brave-integrates-ipfs/) for Windows, macOS and Linux. When Brave detects an address which is an HTTP gateway URL to IPFS content or a native IPFS address such as `ipfs://` or `ipns://` it will prompt the user to install and enable the native IPFS node, or to use an HTTP gateway. 
-Diagnostic UI can be found at `brave://ipfs`, we suggest enabling IPFS Companion for the best experience
-
-TLDR integration status:
-
-- Initial release (v1.19) is focused on daemon orchestration and on URI support (read [blogs and press](https://github.com/ipfs/in-web-browsers/issues/64#issuecomment-763016248))
-- Demo: Opening `ipfs://{cid}` will trigger install prompt for go-ipfs managed by Brave itself.
-- For the best experience enable IPFS Companion and switch it to IPFS Node Type ["Provided by Brave"](https://docs.ipfs.tech/how-to/companion-node-types/#provided-by-brave). 
-  When Companion is enabled all IPFS resources will be resolved by the local node.
+- 2021: [Brave v1.19 has integrated IPFS into their desktop web browser](https://brave.com/brave-integrates-ipfs/) for Windows, macOS and Linux. 
+  - When Brave detected an address which is an HTTP gateway URL to IPFS content or a native IPFS address such as `ipfs://` or `ipns://` it prompted the user to install and enable the native IPFS node (Kubo), or to use an HTTP gateway.  
+  - Initial release (v1.19) was focused on daemon orchestration and on URI support (read [blogs and press](https://github.com/ipfs/in-web-browsers/issues/64#issuecomment-763016248))
+- 2024: After over three years, the Brave team decided to remove support for running IPFS node as we could not find a mutually agreeable set of terms to make this integration sustainable.
+  - Users can retain their PeerID and onboarded data by switching to IPFS Desktop + Companion extension. More details at [Migrating from Brave to IPFS Desktop](https://blog.ipfs.tech/2024-brave-migration-guide/).
 
 #### ipfs-chromium
 
@@ -166,12 +177,12 @@ We're an open project and a friendly group, so please be nice and **read the [co
 
 For the sake of async communication, archiving, and searchability, we encourage browser-related technical discussions to happen in the context of GitHub issue comments whenever practical.
 
-If you want to ask support question, or just chat informally to learn and brainstorm, feel free to join chat community in [#lobby:ipfs.io](https://matrix.to/#/#lobby:ipfs.io) or discussion forum at https://discuss.ipfs.io 
+If you want to ask support question, or just chat informally to learn and brainstorm, feel free to join [chat community](https://docs.ipfs.tech/community/#chat) or discussion forum at https://discuss.ipfs.tech 
 
 
 ### Improve docs
 
-https://docs.ipfs.io is backed by the repo at https://github.com/ipfs/ipfs-docs – any help in improving docs related to browsers (or not) is appreciated!
+https://docs.ipfs.tech is backed by the repo at https://github.com/ipfs/ipfs-docs – any help in improving docs related to browsers (or not) is appreciated!
 
 
 ### Improve specs

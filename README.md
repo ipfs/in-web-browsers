@@ -128,6 +128,7 @@ The most notable highlights (chronological order):
 * 2022-09-28: [Intent to Prototype: Curve25519 in Web Cryptography](https://groups.google.com/a/chromium.org/g/blink-dev/c/n0uKIqfypW0/m/xu5UBbaBAwAJ)
 * 2023-Q3: Kick-off work with Igalia on prototyping [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212)
 * 2024-Q3: Curve25519 in Web APIs is implemented in Chromium and WebKit behind a runtime flag [#](https://github.com/ipfs/in-web-browsers/issues/204#issuecomment-1735833247), remaining work is around WPT and specification details.
+* 2025-Q1: Prototyping [New WebExtension API to register `protocol_handlers` in Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/5518971) 
 
 #### Brave
 

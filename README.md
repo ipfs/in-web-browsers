@@ -104,6 +104,10 @@ Current focus is to watch, learn, and participate in [WebExtensions Community Gr
 
 - 2023-Q3: [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212) mentioned during [WECG TPAC 2023 (notes)](https://github.com/w3c/webextensions/blob/main/_minutes/2023-09-11-wecg-tpac.md)
 
+#### WICG - Web Incubator Community Group
+
+- 2024: [IPFS features in web browsers](https://github.com/WICG/proposals/issues/143)
+
 #### IPFS and Igalia collaborate on dweb in browsers
 
 In 2020 IPFS and Igalia started a collaboration that continues to this day. 

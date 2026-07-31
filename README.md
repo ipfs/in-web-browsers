@@ -1,10 +1,9 @@
 # The IPFS web browsers integration group
 *Informal group working on improving IPFS presence in web browsers*
 
-[![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat)](https://protocol.ai/)
-[![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat)](https://ipfs.tech/)
-[![](https://img.shields.io/badge/matrix%20chat-%23lobby:ipfs.io-blue.svg?style=flat-square)](https://matrix.to/#/#lobby:ipfs.io)
-[![](https://img.shields.io/badge/forums-discuss.ipfs.io-blue.svg?style=flat-square)](https://discuss.ipfs.tech)
+[![Official Part of IPFS Project](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](https://ipfs.tech)
+[![Discourse Forum](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fdiscuss.ipfs.tech&style=flat-square)](https://discuss.ipfs.tech)
+[![Matrix](https://img.shields.io/badge/matrix-%23ipfs--space-blue?style=flat-square)](https://docs.ipfs.tech/community/)
 
 Our goal is to **facilitate native support for IPFS and other decentralized protocols in web browsers in order to benefit ...**. 
 
@@ -14,10 +13,11 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 
 ## Contents
 
-- [Current projects](#current-projects)
+- [Projects](#projects)
    - [IPFS Companion browser extension](#ipfs-companion-browser-extension)
    - [IPFS and the JavaScript ecosystem](#ipfs-and-the-javascript-ecosystem)
       - [Helia](#helia)
+   - [Browsers dialing nodes directly](#browsers-dialing-nodes-directly)
    - [How to address IPFS on the web](#how-to-address-ipfs-on-the-web)
    - [How to run own HTTP Gateway](#how-to-run-own-http-gateway)
    - [How to implement HTTP Gateway](#how-to-implement-http-gateway)
@@ -31,18 +31,20 @@ Our goal is to **facilitate native support for IPFS and other decentralized prot
 - [Get involved!](#get-involved) 
 - [Resources](#resources)
 
-## Current projects
+<a id="current-projects"></a>
+
+## Projects
 
 ### IPFS Companion browser extension
 
-[IPFS Companion](https://github.com/ipfs/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol. It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox (desktop and Android) and Chromium-based browsers including
+[IPFS Companion](https://github.com/ipfs/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds browser support for the IPFS protocol. It runs in <img src="https://unpkg.com/@browser-logos/firefox@2.0.0/firefox_16x16.png" width="16" height="16">Firefox and Chromium-based browsers including
 <img src="https://unpkg.com/@browser-logos/chrome@1.0.4/chrome_16x16.png" width="16" height="16">Chrome or
 <img src="https://unpkg.com/@browser-logos/brave@3.0.0/brave_16x16.png" width="16" height="16">Brave. Check out all of [IPFS Companion's features](https://github.com/ipfs/ipfs-companion#ipfs-companion-features) and [**install it**](https://github.com/ipfs/ipfs-companion#install) today!
 
 
 
 
-| <img src="https://unpkg.com/@browser-logos/firefox/firefox_16x16.png" width="16" height="16"> [Firefox](https://www.mozilla.org/firefox/new/) \| [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox) | <img src="https://unpkg.com/@browser-logos/chrome/chrome_16x16.png" width="16" height="16"> [Chrome](https://www.google.com/chrome/) \| <img src="https://unpkg.com/@browser-logos/brave/brave_16x16.png" width="16" height="16"> [Brave](https://brave.com/) \| <img src="https://unpkg.com/@browser-logos/opera/opera_16x16.png" width="16" height="16"> [Opera](https://www.opera.com/)  \| <img src="https://unpkg.com/@browser-logos/edge/edge_16x16.png" width="16" height="16"> [Edge](https://www.microsoftedgeinsider.com/)
+| <img src="https://unpkg.com/@browser-logos/firefox/firefox_16x16.png" width="16" height="16"> [Firefox](https://www.mozilla.org/firefox/new/) | <img src="https://unpkg.com/@browser-logos/chrome/chrome_16x16.png" width="16" height="16"> [Chrome](https://www.google.com/chrome/) \| <img src="https://unpkg.com/@browser-logos/brave/brave_16x16.png" width="16" height="16"> [Brave](https://brave.com/) \| <img src="https://unpkg.com/@browser-logos/opera/opera_16x16.png" width="16" height="16"> [Opera](https://www.opera.com/)  \| <img src="https://unpkg.com/@browser-logos/edge/edge_16x16.png" width="16" height="16"> [Edge](https://www.microsoftedgeinsider.com/)
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)<br>![](https://img.shields.io/amo/users/ipfs-companion?label=AMO%20users&style=social)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)<br>![](https://img.shields.io/chrome-web-store/users/nibjojkomfdiaoajekhjakgkdhaomnch?label=Chrome%20Web%20Store%20users&style=social)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
@@ -63,12 +65,26 @@ See the [Manifesto](https://github.com/ipfs/helia/wiki/Manifesto), the [FAQ](htt
 
 Usage examples:
 - [examples at `ipfs/helia`](https://github.com/ipfs/helia?tab=readme-ov-file#-usage)
-- an advanced, end-to-end example of using [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch) node in `ServiceWorker` can be found at <https://inbrowser.link> ([sources](https://github.com/ipfs/service-worker-gateway/))
+- an advanced, end-to-end example of using [`@helia/verified-fetch`](https://github.com/ipfs/helia-verified-fetch#readme) node in `ServiceWorker` can be found at <https://inbrowser.link> ([sources](https://github.com/ipfs/service-worker-gateway/))
 
 #### Legacy JS-IPFS
 
 The `js-ipfs` / `ipfs-core` is is no longer maintained.
 See [State of IPFS in JS blog post from October 2022](https://blog.ipfs.tech/state-of-ipfs-in-js/) for rationale.
+
+### Browsers dialing nodes directly
+
+As of 2026 Q3, a browser can fetch content straight from an IPFS node, with no gateway in the
+middle. Three transports carry that traffic: `/webrtc-direct` and `/quic-v1/webtransport` need no
+signalling server and no CA-issued certificate, while `/tls/ws` uses a real certificate the node
+obtains on its own. All three keep moving as browsers change what they accept.
+
+- 2024-05: [service-worker-gateway](https://github.com/ipfs/service-worker-gateway#readme) is the client side of this: a Helia node running in a Service Worker that retrieves over WebTransport, Secure WebSockets, or plain HTTPS, and follows the [subdomain gateway](https://specs.ipfs.tech/http-gateways/subdomain-gateway/) convention so every root CID lands on its own origin. A proof of concept was running at <https://inbrowser.link>.
+- 2024-11: [AutoTLS](https://blog.libp2p.io/autotls/) gets a publicly reachable node a wildcard certificate for `*.[PeerID].libp2p.direct`, so a browser can open a Secure WebSocket to it from a [Secure Context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) without the operator registering a domain or handling a certificate. The [p2p-forge](https://github.com/ipshipyard/p2p-forge#readme) client brokers an ACME DNS-01 challenge, and Let's Encrypt issues the certificate. Kubo ships it in [v0.32](https://github.com/ipfs/kubo/releases/tag/v0.32.0) and enables it by default, under [`AutoTLS`](https://github.com/ipfs/kubo/blob/master/docs/config.md#autotls). A proof of concept broker was running at `libp2p.direct`.
+- 2025-07: [Kubo v0.36](https://github.com/ipfs/kubo/releases/tag/v0.36.0) turns its [HTTP retrieval client](https://github.com/ipfs/kubo/blob/master/docs/config.md#httpretrieval) on by default, so a node fetches blocks over plain HTTPS from providers that offer it. Browsers already retrieve this way through [`@helia/verified-fetch`](https://github.com/ipfs/helia-verified-fetch#readme), and the same [trustless gateway](https://specs.ipfs.tech/http-gateways/trustless-gateway/) responses now serve both.
+- 2026-07: [go-libp2p v0.49.0](https://github.com/libp2p/go-libp2p/releases/tag/v0.49.0) accepts the [`webrtc-direct` v2 handshake](https://github.com/libp2p/specs/pull/715) alongside v1. Chrome has [merged the removal](https://webrtc-review.googlesource.com/c/src/+/385721) of the SDP rewriting v1 depends on, behind the `WebRTC-NoSdpMangleUfrag` field trial, so a v1-only server stops being dialable from Chrome once that reaches stable. [libp2p/specs#672](https://github.com/libp2p/specs/issues/672) tracks the other implementations.
+- 2026-07: the same release answers WebTransport [draft-15](https://www.ietf.org/archive/id/draft-ietf-webtrans-http3-15.html) and the older session identifiers every shipping browser still sends. Firefox is [implementing draft-15](https://github.com/mozilla/neqo/pull/3646), and Safari 26.4 and later will not open a session unless the server sends the `WT_MAX_SESSIONS` limit from [draft-14](https://www.ietf.org/archive/id/draft-ietf-webtrans-http3-14.html). More in [go-libp2p#3532](https://github.com/libp2p/go-libp2p/pull/3532).
+- 2026-07: Kubo v0.43 carries the two transport updates above to node operators, with nothing to configure. See its [changelog](https://github.com/ipfs/kubo/blob/master/docs/changelogs/v0.43.md).
 
 ### How to address IPFS on the web
 
@@ -99,8 +115,9 @@ See specification and implementer notes at <https://specs.ipfs.tech/http-gateway
 
 #### W3C
 
-Protocol Labs is a [W3C Member](https://www.w3.org/Consortium/Member/List). 
-Current focus is to watch, learn, and participate in [WebExtensions Community Group](https://www.w3.org/community/webextensions/).
+Protocol Labs was a [W3C Member](https://www.w3.org/Consortium/Member/List) until the end of 2024,
+and used that seat to watch and participate in the [WebExtensions Community Group](https://www.w3.org/community/webextensions/).
+The member list carried Protocol Labs on 2024-12-01 and no longer did on 2025-01-13.
 
 - 2023-Q3: [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212) mentioned during [WECG TPAC 2023 (notes)](https://github.com/w3c/webextensions/blob/main/_minutes/2023-09-11-wecg-tpac.md)
 
@@ -132,8 +149,17 @@ The most notable highlights (chronological order):
 * 2022-09-28: [Intent to Prototype: Curve25519 in Web Cryptography](https://groups.google.com/a/chromium.org/g/blink-dev/c/n0uKIqfypW0/m/xu5UBbaBAwAJ)
 * 2023-Q3: Kick-off work with Igalia on prototyping [ServiceWorker-like protocol handlers for WebExtensions](https://github.com/ipfs/in-web-browsers/issues/212)
 * 2024-Q3: Curve25519 in Web APIs is implemented in Chromium and WebKit behind a runtime flag [#](https://github.com/ipfs/in-web-browsers/issues/204#issuecomment-1735833247), remaining work is around WPT and specification details.
-* 2025-Q1: Prototyping [New WebExtension API to register `protocol_handlers` in Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/5518971)
+* 2025-Q1: Prototyping [New WebExtension API to register `protocol_handlers` in Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/5518971). The prototype was abandoned once the real implementation started, see the 2025-Q2 and 2025-Q3 entries below
 * 2025-Q1: [blogpost: Can I use Secure Curves in the Web Platform?](https://blogs.igalia.com/jfernandez/2025/02/28/can-i-use-secure-curves-in-the-web-platform/), [chromium: Ship the Ed25519 WebCrypto agorithm](https://chromium-review.googlesource.com/c/chromium/src/+/6440173)
+* 2025-Q2: Ed25519 in WebCrypto ships enabled by default in Chrome 137
+* 2025-Q2: the WebExtension `protocol_handlers` manifest key [lands in Chromium](https://chromium-review.googlesource.com/c/chromium/src/+/6382139)
+* 2025-Q2: [throttling for pending WebTransport sessions](https://chromium-review.googlesource.com/c/chromium/src/+/5756508) lands behind a runtime flag, tuned against a browser libp2p app run with Interplanetary Shipyard
+* 2025-Q3: [the API that performs the handler registration](https://chromium-review.googlesource.com/c/chromium/src/+/6727594) lands, and work starts on the Chrome bugs blocking the Service Worker Gateway ([issue 40410035](https://issues.chromium.org/issues/40410035))
+* 2025-Q4: [early-cancellation mitigation](https://chromium-review.googlesource.com/c/chromium/src/+/6727715) closes out the WebTransport work; permission handling lands as [navigation interception](https://chromium-review.googlesource.com/c/chromium/src/+/7156864) and a [prompt dialog](https://chromium-review.googlesource.com/c/chromium/src/+/7031939)
+* 2026-Q1: protocol handler registration from extensions ships behind an experimental flag in Chrome 146
+* 2026-Q1: [blogpost: Protocol handler registration via browser extensions](https://blogs.igalia.com/jfernandez/2026/03/24/protocol-handler-registration-via-browser-extensions/)
+* 2026-Q2: [a Service Worker interceptor for download requests](https://chromium-review.googlesource.com/c/chromium/src/+/7782160) merges behind the `ServiceWorkerInterceptDownloads` flag, one of the blockers for the Service Worker Gateway
+* 2026-Q3: [error code mapping](https://chromium-review.googlesource.com/c/chromium/src/+/7912624) merges and [issue 40410035](https://issues.chromium.org/issues/40410035) is fixed; work starts on Service Worker support in Tor Browser
 
 #### Brave
 
@@ -173,7 +199,6 @@ You can also explore [recordings](https://www.youtube.com/playlist?list=PLuhRWgm
 Contributions to our work are more than welcome! Every IPFS Project repo makes use of the project-wide [global issue labeling scheme](https://github.com/ipfs/community/blob/master/ISSUE_LABELS.md). Good labels to look for are ...
 - `help wanted`
 - `good first issue`
-- and there are even occasional `bounty` labels for issues with rewards as part of the [IPFS Bounty Board](https://github.com/ipfs/devgrants/projects/1)!
 
 If you see an issue that catches your eye, leave a comment so we know you're interested, and we'll go from there!
 

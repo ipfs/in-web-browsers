@@ -91,7 +91,7 @@ obtains on its own. All three keep moving as browsers change what they accept.
 - For regular users, see
   - this [guide to how to address IPFS content paths on the web](https://docs.ipfs.io/how-to/address-ipfs-on-web/)
   - this [reference about HTTP Gateway API](https://docs.ipfs.tech/reference/http/gateway/)
-- For browser vendors and user agent developers, see this [memo](ADDRESSING.md) for the current set of URL conventions for the IPFS community; we invite everyone to submit questions and suggestions for improvements via issues/PRs
+- For browser vendors and user agent developers, see the [IPFS URI](https://specs.ipfs.tech/ipfs-uri/) and [IPNS URI](https://specs.ipfs.tech/ipns-uri/) specifications
 
 ### How to run own HTTP Gateway
 

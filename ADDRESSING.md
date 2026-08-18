@@ -1,7 +1,7 @@
 # IPFS Addressing in Web Browsers
 
-> [!NOTE]
-> **Status of This Memo:** superseded by [ipfs/specs#544](https://github.com/ipfs/specs/pull/544), which turns the conventions below into `ipfs://` and `ipns://` specifications. Once it lands, those documents take precedence and this memo stays for historical reference only.
+> [!IMPORTANT]
+> **Status of This Memo:** superseded by the [IPFS URI](https://specs.ipfs.tech/ipfs-uri/) and [IPNS URI](https://specs.ipfs.tech/ipns-uri/) specifications. Those documents take precedence; this memo stays for historical reference only.
 
 ## Table of Contents
 
